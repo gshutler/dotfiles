@@ -38,3 +38,6 @@ autocmd FileType html,ruby setlocal shiftwidth=2 tabstop=2
 
 " CtrlP - Open created files in the current window
 let g:ctrlp_open_new_file = 'r'
+
+" Make CSApprox fail silently if it isn't run in a GUI vim
+let g:CSApprox_verbose_level = 0
