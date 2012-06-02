@@ -4,9 +4,9 @@ let g:molokai_original = 1
 set t_Co=256
 colorscheme molokai
 
-" Default tabs to 4 spaces and auto indent
-set tabstop=4
-set shiftwidth=4
+" Default tabs to 2 spaces and auto indent
+set tabstop=2
+set shiftwidth=2
 set autoindent
 
 set expandtab  " Replace tabs with spaces
@@ -36,13 +36,11 @@ highlight PmenuSel     ctermfg=Black    ctermbg=White
 highlight StatusLine   ctermfg=Black    ctermbg=White    cterm=none gui=none
 highlight StatusLineNC ctermfg=Black    ctermbg=DarkGray cterm=none gui=none
 
-" 2 space tabs for HTML and Ruby
-autocmd FileType html,ruby setlocal shiftwidth=2 tabstop=2
-
 " CtrlP - Open created files in the current window
 let g:ctrlp_open_new_file = 'r'
 
 " COMMENTING HELPERS
+
 " Ctrl+j whilst in insert mode continues the next line with the same lead as
 " the current line, trimming any trailing whitespace.
 inoremap <C-j> <CR>#<Esc>k^yw:.s/\s\+$//e<CR>jPf#xA
