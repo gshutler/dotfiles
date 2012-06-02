@@ -14,6 +14,9 @@ set number     " Show line numbers
 set cursorline " Highlight current line
 set ruler
 
+" Reduce the lag of pressing O just after Esc
+set timeoutlen=100
+
 " Col80 plus file specific limit highlighting when set
 set colorcolumn=+1,80
 
@@ -38,3 +41,14 @@ autocmd FileType html,ruby setlocal shiftwidth=2 tabstop=2
 
 " CtrlP - Open created files in the current window
 let g:ctrlp_open_new_file = 'r'
+
+" COMMENTING HELPERS
+" Ctrl+j whilst in insert mode continues the next line with the same lead as
+" the current line, trimming any trailing whitespace.
+inoremap <C-j> <CR><Esc>k:.s/\s\+$//<CR>^ywjPA
+" Ctrl+j whilst in normal mode breaks the line at the next space line whilst
+" adding a lead the same as the current line.
+nnoremap <C-j> f r<CR><Esc>k^ywjPw
+" Ctrl+o whilst in normal mode creates a new line with the same lead as the
+" current line.
+nnoremap <C-o> ^ywo<Esc>pA
