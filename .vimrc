@@ -20,8 +20,9 @@ set ruler
 " Reduce the lag of pressing O just after Esc
 set timeoutlen=100
 
-" Col80 plus file specific limit highlighting when set
-set colorcolumn=+1,81
+" Column limit highlighting plus file specific limit definitions
+set colorcolumn=+1
+autocmd FileType ruby set textwidth=80
 
 " Don't have sticky search highlight but do highlight whilst searching
 set nohlsearch
@@ -44,22 +45,12 @@ let g:ctrlp_open_new_file = 'r'
 
 " COMMENTING HELPERS
 
-" Ctrl+j whilst in insert mode continues the next line with the same lead as the
-" current line, trimming any trailing whitespace.
-inoremap <C-j> <CR>#<Esc>k^yw:.s/\s\+$//e<CR>jPf#xA
-
-" Ctrl+j whilst in normal mode breaks the line at the previous space, or the
-" current space if one is under the cursor, and continues the next line with the
-" same lead as the current line, trimming any trailing whitespace.
-nnoremap <C-j> lF wi<CR>#<Esc>k^yw:.s/\s\+$//e<CR>jPf#x
+" Ctrl+j whilst in normal mode joins this line with the next one.
+nnoremap <C-j> Jd2wi <Esc>
 
 " Ctrl+f whilst in normal mode breaks the line for col80 formatting.
-nnoremap <C-f> 082lF r<CR><Esc>k^ywjPw
+nnoremap <C-f> 081lF r<CR><Esc>
 
-" Ctrl+k whilst in normal mode joins this line with the previous one, removing
-" the lead of the current line.
-nnoremap <C-k> kJde
+" Ctrl+k whilst in normal mode joins this line with the previous one.
+nnoremap <C-k> kJd2wi <Esc>
 
-" Ctrl+o whilst in normal mode creates a new line with the same lead as the
-" current line.
-nnoremap <C-o> ^ywo#<Esc>Pf#xA
