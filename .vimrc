@@ -54,3 +54,5 @@ nnoremap <C-f> 081lF r<CR><Esc>
 " Ctrl+k whilst in normal mode joins this line with the previous one.
 nnoremap <C-k> kJd2wi <Esc>
 
+" F8 whilst in normal mode removes all whitespace.
+nnoremap <F8> my:%s/\s\+$//<CR>`y
