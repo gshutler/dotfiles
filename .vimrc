@@ -56,3 +56,4 @@ nnoremap <C-k> kJd2wi <Esc>
 
 " F8 whilst in normal mode removes all whitespace.
 nnoremap <F8> my:%s/\s\+$//<CR>`y
+
