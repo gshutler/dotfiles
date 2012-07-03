@@ -42,6 +42,8 @@ highlight StatusLineNC ctermfg=Black    ctermbg=DarkGray cterm=none gui=none
 
 " CtrlP - Open created files in the current window
 let g:ctrlp_open_new_file = 'r'
+" CtrlP - Add .ctrlp as a custom root file
+let g:ctrlp_root_markers = ['.ctrlp']
 
 " COMMENTING HELPERS
 
