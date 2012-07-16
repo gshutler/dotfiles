@@ -65,19 +65,20 @@ syn match  mkdListItem  "^\s*[-*+]\s\+"
 syn match  mkdListItem  "^\s*\d\+\.\s\+"
 syn match  mkdCode      /^\s*\n\(\(\s\{4,}[^ ]\|\t\+[^\t]\).*\n\)\+/
 syn match  mkdLineBreak /  \+$/
-syn region mkdCode      start=/\\\@<!`/                   end=/\\\@<!`/
-syn region mkdCode      start=/\s*``[^`]*/          end=/[^`]*``\s*/
-syn region mkdBlockquote start=/^\s*>/              end=/$/                 contains=mkdLineBreak,mkdLineContinue,@Spell
-syn region mkdCode      start="<pre[^>]*>"         end="</pre>"
-syn region mkdCode      start="<code[^>]*>"        end="</code>"
+syn region mkdCode      start=/\\\@<!`/         end=/\\\@<!`/
+syn region mkdCode      start=/\s*``[^`]*/      end=/[^`]*``\s*/
+syn region mkdCode      start=/^```\w*\s*$/     end=/^```\s*$/
+syn region mkdBlockquote start=/^\s*>/          end=/$/                 contains=mkdLineBreak,mkdLineContinue,@Spell
+syn region mkdCode      start="<pre[^>]*>"      end="</pre>"
+syn region mkdCode      start="<code[^>]*>"     end="</code>"
 
 "HTML headings
-syn region htmlH1       start="^\s*#"                   end="\($\|#\+\)" contains=@Spell
-syn region htmlH2       start="^\s*##"                  end="\($\|#\+\)" contains=@Spell
-syn region htmlH3       start="^\s*###"                 end="\($\|#\+\)" contains=@Spell
-syn region htmlH4       start="^\s*####"                end="\($\|#\+\)" contains=@Spell
-syn region htmlH5       start="^\s*#####"               end="\($\|#\+\)" contains=@Spell
-syn region htmlH6       start="^\s*######"              end="\($\|#\+\)" contains=@Spell
+syn region htmlH1       start="^\s*#"           end="\($\|#\+\)" contains=@Spell
+syn region htmlH2       start="^\s*##"          end="\($\|#\+\)" contains=@Spell
+syn region htmlH3       start="^\s*###"         end="\($\|#\+\)" contains=@Spell
+syn region htmlH4       start="^\s*####"        end="\($\|#\+\)" contains=@Spell
+syn region htmlH5       start="^\s*#####"       end="\($\|#\+\)" contains=@Spell
+syn region htmlH6       start="^\s*######"      end="\($\|#\+\)" contains=@Spell
 syn match  htmlH1       /^.\+\n=\+$/ contains=@Spell
 syn match  htmlH2       /^.\+\n-\+$/ contains=@Spell
 

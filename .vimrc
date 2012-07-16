@@ -16,13 +16,14 @@ set expandtab  " Replace tabs with spaces
 set number     " Show line numbers
 set cursorline " Highlight current line
 set ruler
+set scrolloff=4 " Always show 4 lines of context at the top/bottom
 
 " Reduce the lag of pressing O just after Esc
-set timeoutlen=100
+set timeoutlen=200
 
 " Column limit highlighting plus file specific limit definitions
 set colorcolumn=+1
-autocmd FileType ruby set textwidth=80
+set textwidth=80
 
 " Don't have sticky search highlight but do highlight whilst searching
 set nohlsearch
@@ -59,3 +60,7 @@ nnoremap <C-k> kJd2wi <Esc>
 " F8 whilst in normal mode removes all whitespace.
 nnoremap <F8> my:%s/\s\+$//<CR>`y
 
+" Changed active leader to ','
+let mapleader = ";"
+
+map <leader>a :w\|:!rake test<cr>
