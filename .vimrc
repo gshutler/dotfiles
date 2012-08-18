@@ -4,6 +4,9 @@ let g:molokai_original = 1
 set t_Co=256
 colorscheme molokai
 
+" Always show status bar
+set laststatus=2
+
 " Default tabs to 2 spaces and auto indent
 set tabstop=2
 set shiftwidth=2
@@ -59,6 +62,9 @@ nnoremap <C-k> kJd2wi <Esc>
 
 " F8 whilst in normal mode removes all whitespace.
 nnoremap <F8> my:%s/\s\+$//<CR>`y
+
+" jj whilst in insert mode returns to normal mode.
+imap jj <Esc>
 
 " Changed active leader to ','
 let mapleader = ";"
