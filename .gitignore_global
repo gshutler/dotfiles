@@ -2,3 +2,5 @@
 .DS_Store
 *.swp
 .ctrlp
+.bundle
+bin

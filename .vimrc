@@ -12,6 +12,9 @@ set tabstop=2
 set shiftwidth=2
 set autoindent
 
+" disable text wrapping
+set nowrap
+
 " Enable indent plugin
 filetype plugin indent on
 
@@ -20,6 +23,10 @@ set number     " Show line numbers
 set cursorline " Highlight current line
 set ruler
 set scrolloff=4 " Always show 4 lines of context at the top/bottom
+
+" Hide buffers rather than closing them to maintain undo history
+set hidden
+set undolevels=1000
 
 " Reduce the lag of pressing O just after Esc
 set timeoutlen=200
@@ -66,7 +73,35 @@ nnoremap <F8> my:%s/\s\+$//<CR>`y
 " jj whilst in insert mode returns to normal mode.
 imap jj <Esc>
 
-" Changed active leader to ','
-let mapleader = ";"
 
+" Changed active leader to ','
+let mapleader = ","
+
+" Run 'rake test' after saving
 map <leader>a :w\|:!rake test<cr>
+
+" Shortcut for editing and save-with-reload for .vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :source $MYVIMRC<CR>
+
+" Allow ; rather than : to enter commands in normal mode
+nnoremap ; :
+
+" Create a log message 'hiding' toggle
+syn match LogMessage /\c^\s*log.*/
+
+hi link LogMessage NONE
+let s:hide_logs = "no"
+
+function! ToggleLogs()
+  if s:hide_logs == "yes"
+    hi link LogMessage NONE
+    let s:hide_logs = "no"
+  else
+    hi link LogMessage Comment
+    let s:hide_logs = "yes"
+  endif
+endfunction
+
+nnoremap <silent> <F10> :call ToggleLogs()<CR>
+
