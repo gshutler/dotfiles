@@ -7,6 +7,9 @@ colorscheme molokai
 " Always show status bar
 set laststatus=2
 
+set wildignore+=*/vendor/bundle*
+
+
 " Default tabs to 2 spaces and auto indent
 set tabstop=2
 set shiftwidth=2
@@ -35,6 +38,9 @@ set timeoutlen=200
 set colorcolumn=+1
 set textwidth=80
 
+" Set textwidth to 72 for git commits
+au FileType gitcommit set textwidth=72
+
 " Don't have sticky search highlight but do highlight whilst searching
 set nohlsearch
 set incsearch
@@ -61,8 +67,12 @@ let g:ctrlp_root_markers = ['.ctrlp']
 " Ctrl+j whilst in normal mode joins this line with the next one.
 nnoremap <C-j> Jd2wi <Esc>
 
+function! ObeyTextWidth()
+  return "normal! 0" . &textwidth . "lF r\<CR>"
+endfunction
+
 " Ctrl+f whilst in normal mode breaks the line for col80 formatting.
-nnoremap <C-f> 081lF r<CR><Esc>
+nnoremap <C-f> :execute ObeyTextWidth()<CR>
 
 " Ctrl+k whilst in normal mode joins this line with the previous one.
 nnoremap <C-k> kJd2wi <Esc>
