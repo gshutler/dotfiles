@@ -8,11 +8,10 @@ colorscheme molokai
 set laststatus=2
 
 set wildignore+=*/vendor/bundle*
-
+set wildignore+=*/node_modules*
 
 " Default tabs to 2 spaces and auto indent
-set tabstop=2
-set shiftwidth=2
+set tabstop=2 shiftwidth=2
 set autoindent
 
 " disable text wrapping
@@ -56,6 +55,7 @@ highlight Pmenu        ctermfg=Black    ctermbg=DarkGray
 highlight PmenuSel     ctermfg=Black    ctermbg=White
 highlight StatusLine   ctermfg=Black    ctermbg=White    cterm=none gui=none
 highlight StatusLineNC ctermfg=Black    ctermbg=DarkGray cterm=none gui=none
+highlight MatchParen   ctermfg=DarkGray ctermbg=Black    cterm=none
 
 " CtrlP - Open created files in the current window
 let g:ctrlp_open_new_file = 'r'
