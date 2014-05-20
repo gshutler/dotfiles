@@ -4,3 +4,5 @@
 .ctrlp
 .bundle
 bin
+tmp
+vendor
