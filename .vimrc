@@ -17,6 +17,11 @@ set autoindent
 " disable text wrapping
 set nowrap
 
+" No swap files, etc
+set nobackup
+set nowritebackup
+set noswapfile
+
 " Enable indent plugin
 filetype plugin indent on
 
@@ -44,7 +49,7 @@ au FileType gitcommit set textwidth=72
 set nohlsearch
 set incsearch
 
-" Visible trailing whitespace
+" Visible whitespace
 set listchars=tab:»·,trail:·,precedes:<,extends:>
 set list
 
@@ -61,6 +66,9 @@ highlight MatchParen   ctermfg=DarkGray ctermbg=Black    cterm=none
 let g:ctrlp_open_new_file = 'r'
 " CtrlP - Add .ctrlp as a custom root file
 let g:ctrlp_root_markers = ['.ctrlp']
+
+" HTML formatting - treat li and p as blocks
+let g:html_indent_tags = 'li\|p'
 
 " COMMENTING HELPERS
 
@@ -83,6 +91,11 @@ nnoremap <F8> my:%s/\s\+$//<CR>`y
 " jj whilst in insert mode returns to normal mode.
 imap jj <Esc>
 
+" Quicker window movement
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Changed active leader to ','
 let mapleader = ","
