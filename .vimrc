@@ -91,12 +91,6 @@ nnoremap <F8> my:%s/\s\+$//<CR>`y
 " jj whilst in insert mode returns to normal mode.
 imap jj <Esc>
 
-" Quicker window movement
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-
 " Changed active leader to ','
 let mapleader = ","
 
