@@ -17,6 +17,10 @@ set autoindent
 " disable text wrapping
 set nowrap
 
+" Open new buffers when splitting in natural directions
+set splitright
+set splitbelow
+
 " No swap files, etc
 set nobackup
 set nowritebackup
@@ -64,6 +68,8 @@ highlight MatchParen   ctermfg=DarkGray ctermbg=Black    cterm=none
 
 " CtrlP - Open created files in the current window
 let g:ctrlp_open_new_file = 'r'
+" CtrlP - Don't jump to open buffers for the selected file
+let g:ctrlp_switch_buffer = 0
 " CtrlP - Add .ctrlp as a custom root file
 let g:ctrlp_root_markers = ['.ctrlp']
 
