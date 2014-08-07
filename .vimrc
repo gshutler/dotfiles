@@ -20,6 +20,8 @@ set nowrap
 " Open new buffers when splitting in natural directions
 set splitright
 set splitbelow
+" Rebalance buffers on window resize
+autocmd VimResized * wincmd =
 
 " No swap files, etc
 set nobackup
