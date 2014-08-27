@@ -1,0 +1,29 @@
+[user]
+  name = Garry Shutler
+  email = garry@robustsoftware.co.uk
+[color]
+  ui = auto
+[core]
+  excludesfile = /Users/gshutler/.gitignore_global
+  editor = mvim -v
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
+[mergetool "sourcetree"]
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[push]
+  default = upstream
+[alias]
+  ch = checkout
+  co = checkout
+  ma = checkout master
+  mas = checkout master
+  master = checkout master
+  pusho = push -u origin
+  newb = checkout -b
+  no-ff = merge --no-ff
+  ff-only = merge --ff-only
+[filter "media"]
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
