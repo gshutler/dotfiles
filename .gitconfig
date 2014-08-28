@@ -14,6 +14,8 @@
   trustExitCode = true
 [push]
   default = upstream
+[merge]
+  defaultToUpstream = true
 [alias]
   ch = checkout
   co = checkout
@@ -23,7 +25,10 @@
   pusho = push -u origin
   newb = checkout -b
   no-ff = merge --no-ff
+  noff = merge --no-ff
   ff-only = merge --ff-only
+  ffonly = merge --ff-only
+  pff-only = pull --ff-only
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
