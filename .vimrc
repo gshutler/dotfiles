@@ -80,8 +80,10 @@ let g:html_indent_tags = 'li\|p'
 
 " COMMENTING HELPERS
 
-" Ctrl+j whilst in normal mode joins this line with the next one.
-nnoremap <C-j> Jd2wi <Esc>
+" Alt+j whilst in normal mode joins this line with the next one.
+nnoremap ∆ Jd2wi <Esc>
+" Alt+k whilst in normal mode joins this line with the previous one.
+nnoremap ˚ kJd2wi <Esc>
 
 function! ObeyTextWidth()
   return "normal! 0" . &textwidth . "lF r\<CR>"
@@ -111,6 +113,8 @@ nmap <silent> <leader>sv :source $MYVIMRC<CR>
 
 " Allow ; rather than : to enter commands in normal mode
 nnoremap ; :
+" Switch ; to : so it's still accessible
+nnoremap : ;
 
 " Create a log message 'hiding' toggle
 syn match LogMessage /\c^\s*log.*/
@@ -130,3 +134,8 @@ endfunction
 
 nnoremap <silent> <F10> :call ToggleLogs()<CR>
 
+" Simpler split navigation
+noremap <c-h> <c-w>h
+noremap <c-j> <c-w>j
+noremap <c-k> <c-w>k
+noremap <c-l> <c-w>l
