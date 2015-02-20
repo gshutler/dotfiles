@@ -17,18 +17,19 @@
 [merge]
   defaultToUpstream = true
 [alias]
+  amend = commit --amend
   ch = checkout
   co = checkout
+  ff-only = merge --ff-only
+  ffonly = merge --ff-only
   ma = checkout master
   mas = checkout master
   master = checkout master
-  pusho = push -u origin
   newb = checkout -b
   no-ff = merge --no-ff
   noff = merge --no-ff
-  ff-only = merge --ff-only
-  ffonly = merge --ff-only
   pff-only = pull --ff-only
+  pusho = push -u origin
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
