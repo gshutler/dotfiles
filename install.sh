@@ -9,7 +9,7 @@ dir=~/dotfiles
 # Old dotfiles backup directory
 olddir=~/dotfiles_old
 # List of files/folders to symlink in homedir
-files=".vimrc .vim .gitconfig .gitignore_global"
+files=".vimrc .vim .gitconfig .gitignore_global bin .bash_profile_dotfiles"
 
 # Create dotfiles_old in homedir.
 if [ ! -e $olddir ]; then
@@ -38,3 +38,14 @@ for file in $files; do
     ln -s $dir/$file ~/$file
     echo "Link created"
 done
+
+echo ""
+sourcecmd="source \$HOME/.bash_profile_dotfiles"
+
+# Ensure .bash_profile_dotfiles sourced from ~/.bash_profile
+if grep --quiet "$sourcecmd" ~/.bash_profile ; then
+  echo ".bash_profile_dotfiles already sourced from ~/.bash_profile"
+else
+  echo "Appending \"$sourcecmd\" to ~/.bash_profile"
+  echo -e "\n$sourcecmd" >> ~/.bash_profile
+fi
