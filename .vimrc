@@ -78,6 +78,9 @@ let g:ctrlp_root_markers = ['.ctrlp']
 " HTML formatting - treat li and p as blocks
 let g:html_indent_tags = 'li\|p'
 
+" Markdown formatting - syntax highlighting for ```ruby style blocks
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
+
 " COMMENTING HELPERS
 
 " Alt+j whilst in normal mode joins this line with the next one.
