@@ -3,7 +3,7 @@
 cd ~/Code
 
 if [ -z "$1" ]; then
-  cd $(find . -maxdepth 3 -type d -name .git | sed "s/\/\.git$//" | selecta)
+  cd $(find . -maxdepth 3 -type d -name .git | sed -e "s/\/\.git$//" -e "s/^\.\///" | selecta)
 else
-  cd $( find . -maxdepth 3 -type d -name .git | sed "s/\/\.git$//" | selecta --search "$1")
+  cd $( find . -maxdepth 3 -type d -name .git | sed -e "s/\/\.git$//" -e "s/^\.\///" | selecta --search "$1")
 fi
