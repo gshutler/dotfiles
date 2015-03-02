@@ -3,7 +3,7 @@
 cd ~/Code
 
 if [ -z "$1" ]; then
-  cd $(find . cronofy evenitron gshutler zopa -maxdepth 1 -type d | selecta)
+  cd $(find . -maxdepth 3 -type d -name .git | sed "s/\/\.git$//" | selecta)
 else
-  cd $(find . cronofy evenitron gshutler zopa -maxdepth 1 -type d | selecta --search "$1")
+  cd $( find . -maxdepth 3 -type d -name .git | sed "s/\/\.git$//" | selecta --search "$1")
 fi
