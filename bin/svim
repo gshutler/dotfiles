@@ -3,8 +3,21 @@
 # Fail fast
 set -o errexit
 
+files=`find . -type d \( \
+                  -path ./.git -o \
+                  -path ./app/assets/fonts -o \
+                  -path ./app/assets/images -o \
+                  -path ./log -o \
+                  -path ./node_modules -o \
+                  -path ./public -o \
+                  -path ./tmp -o \
+                  -path ./vendor \
+              \) \
+              -prune -o \
+              -type f -print | sed -e "s/^\.\///"`
+
 if [ -z "$1" ]; then
-  mvim -v $(git ls-files | grep -v "^vendor" | selecta)
+  mvim -v $(echo -e "$files" | selecta)
 else
-  mvim -v $(git ls-files | grep -v "^vendor" | selecta --search "$1")
+  mvim -v $(echo -e "$files" | selecta --search "$1")
 fi
