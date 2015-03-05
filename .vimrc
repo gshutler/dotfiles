@@ -114,8 +114,9 @@ map <leader>a :w\|:!rake test<cr>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
 
-" Allows ;w instead of :w
+" Allows ;{w,q} instead of :{w,q}
 nnoremap ;w :w
+nnoremap ;q :q
 
 " Create a log message 'hiding' toggle
 syn match LogMessage /\c^\s*log.*/
