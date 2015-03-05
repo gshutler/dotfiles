@@ -114,10 +114,8 @@ map <leader>a :w\|:!rake test<cr>
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
 
-" Allow ; rather than : to enter commands in normal mode
-nnoremap ; :
-" Switch ; to : so it's still accessible
-nnoremap : ;
+" Allows ;w instead of :w
+nnoremap ;w :w
 
 " Create a log message 'hiding' toggle
 syn match LogMessage /\c^\s*log.*/
