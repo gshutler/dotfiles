@@ -89,7 +89,7 @@ nnoremap ∆ Jd2wi <Esc>
 nnoremap ˚ kJd2wi <Esc>
 
 function! ObeyTextWidth()
-  return "normal! 0" . &textwidth . "lF r\<CR>"
+  return "normal! 0" . &textwidth . "llF r\<CR>"
 endfunction
 
 " Ctrl+f whilst in normal mode breaks the line for col80 formatting.
