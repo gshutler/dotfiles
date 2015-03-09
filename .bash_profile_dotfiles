@@ -3,3 +3,4 @@
 # File for non-machine specific additions to .bash_profile
 
 alias code="source ~/bin/code"
+alias root="source ~/bin/root"
