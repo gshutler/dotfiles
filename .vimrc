@@ -74,6 +74,8 @@ let g:ctrlp_open_new_file = 'r'
 let g:ctrlp_switch_buffer = 0
 " CtrlP - Add .ctrlp as a custom root file
 let g:ctrlp_root_markers = ['.ctrlp']
+" CtrlP - Use ag to list files instead
+let g:ctrlp_user_command = 'ag %s --ignore-case --nocolor --nogroup --hidden -g ""'
 
 " HTML formatting - treat li and p as blocks
 let g:html_indent_tags = 'li\|p'
