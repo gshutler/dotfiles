@@ -4,6 +4,9 @@ let g:molokai_original = 1
 set t_Co=256
 colorscheme molokai
 
+" Load a local .vimrc if present (allows for project-specific settings)
+set exrc
+
 " Always show status bar
 set laststatus=2
 
@@ -49,7 +52,7 @@ set colorcolumn=+1
 set textwidth=80
 
 " Set textwidth to 72 for git commits
-au FileType gitcommit set textwidth=72
+autocmd FileType gitcommit setlocal spell textwidth=72
 
 " Don't have sticky search highlight but do highlight whilst searching
 set nohlsearch
@@ -142,3 +145,8 @@ noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
+
+set undofile            " Save undo's after file closes
+set undodir=~/.vim/undo " where to save undo histories
+set undolevels=1000     " How many undos
+set undoreload=10000    " number of lines to save for undo
