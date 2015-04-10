@@ -1,9 +1,11 @@
+*.swp
 *~
 .DS_Store
-*.swp
 .agignore
-.ctrlp
 .bundle
+.ctrlp
+.powenv
 bin
+pkg
 tmp
 vendor

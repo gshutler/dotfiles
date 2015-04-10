@@ -62,7 +62,7 @@ set incsearch
 set listchars=tab:»·,trail:·,precedes:<,extends:>
 set list
 
-" 256 color reference http://www.mudpedia.org/wiki/Xterm_256_colors
+" 256 color reference http://www.mudpedia.org/mediawiki/index.php/Xterm_256_colors
 highlight ColorColumn  ctermbg=232
 highlight CursorLine   ctermbg=235
 highlight Pmenu        ctermfg=Black    ctermbg=DarkGray
@@ -70,6 +70,8 @@ highlight PmenuSel     ctermfg=Black    ctermbg=White
 highlight StatusLine   ctermfg=Black    ctermbg=White    cterm=none gui=none
 highlight StatusLineNC ctermfg=Black    ctermbg=DarkGray cterm=none gui=none
 highlight MatchParen   ctermfg=DarkGray ctermbg=Black    cterm=none
+highlight clear SpellBad
+highlight SpellBad ctermfg=009
 
 " CtrlP - Open created files in the current window
 let g:ctrlp_open_new_file = 'r'
@@ -89,9 +91,9 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 " COMMENTING HELPERS
 
 " Alt+j whilst in normal mode joins this line with the next one.
-nnoremap ∆ Jd2wi <Esc>
+nnoremap ∆ Jd2wi <Esc>w
 " Alt+k whilst in normal mode joins this line with the previous one.
-nnoremap ˚ kJd2wi <Esc>
+nnoremap ˚ kJd2wi <Esc>w
 
 function! ObeyTextWidth()
   return "normal! 0" . &textwidth . "llF r\<CR>"
@@ -99,12 +101,14 @@ endfunction
 
 " Ctrl+f whilst in normal mode breaks the line for col80 formatting.
 nnoremap <C-f> :execute ObeyTextWidth()<CR>
+" As does Alt+f
+nnoremap ƒ :execute ObeyTextWidth()<CR>
 
 " Ctrl+k whilst in normal mode joins this line with the previous one.
 nnoremap <C-k> kJd2wi <Esc>
 
-" F8 whilst in normal mode removes all whitespace.
-nnoremap <F8> my:%s/\s\+$//<CR>`y
+" F8 in normal mode removes all trailing whitespace and extra blank lines.
+nnoremap <F8> my:%s/\s\+$//<CR>:%s/\n\{3,}/\r\r/<CR>`y
 
 " jj whilst in insert mode returns to normal mode.
 imap jj <Esc>
