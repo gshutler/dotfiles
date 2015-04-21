@@ -108,7 +108,7 @@ nnoremap ƒ :execute ObeyTextWidth()<CR>
 nnoremap <C-k> kJd2wi <Esc>
 
 " F8 in normal mode removes all trailing whitespace and extra blank lines.
-nnoremap <F8> my:%s/\s\+$//<CR>:%s/\n\{3,}/\r\r/<CR>`y
+nnoremap <F8> my:%s/\s\+$//e<CR>:%s/\n\{3,}/\r\r/e<CR>`y
 
 " jj whilst in insert mode returns to normal mode.
 imap jj <Esc>
