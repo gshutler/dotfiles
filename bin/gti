@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+echo "__    _"
+echo " \\\`../ |o_..__"
+echo " \`.,(o)______(o).>"
+echo ""
+echo " #### VROOOM! ####"
+echo ""
+
+git $@
