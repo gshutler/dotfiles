@@ -5,6 +5,7 @@ set -o errexit
 
 files=`find . -type d \( \
                   -path ./.git -o \
+                  -path ./.sass-cache -o \
                   -path ./app/assets/fonts -o \
                   -path ./app/assets/images -o \
                   -path ./log -o \
