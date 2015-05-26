@@ -25,6 +25,7 @@
   ma = checkout master
   mas = checkout master
   master = checkout master
+  new = checkout -b
   newb = checkout -b
   no-ff = merge --no-ff
   noff = merge --no-ff
