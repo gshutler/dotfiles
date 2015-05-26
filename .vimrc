@@ -25,6 +25,7 @@ set splitright
 set splitbelow
 " Rebalance buffers on window resize
 autocmd VimResized * wincmd =
+autocmd VimResized * vertical wincmd =
 
 " No swap files, etc
 set nobackup
