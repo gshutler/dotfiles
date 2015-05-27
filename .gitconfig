@@ -19,7 +19,7 @@
 [alias]
   amend = commit --amend
   ch = checkout
-  cm = commit
+  cm = commit --verbose
   co = checkout
   ff-only = merge --ff-only
   ffonly = merge --ff-only
