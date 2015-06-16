@@ -6,6 +6,7 @@
 .ctrlp
 .powenv
 bin
+exe
 pkg
 tmp
 vendor
