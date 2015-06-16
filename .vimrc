@@ -129,6 +129,9 @@ nmap <silent> <leader>sv :source $MYVIMRC<CR>
 nmap <leader>w :w<CR>
 nmap <leader>wq :wq<CR>
 
+" CtrlP aliases
+nmap <leader>p :CtrlP<CR>
+
 " Easy command mode
 nmap <leader><space> :
 
