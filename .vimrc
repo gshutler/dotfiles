@@ -116,7 +116,7 @@ imap jj <Esc>
 imap kk <Esc>
 
 " Changed active leader to ','
-let mapleader = ","
+let mapleader = " "
 
 " Run 'rake test' after saving
 map <leader>a :w\|:!rake test<cr>
@@ -124,6 +124,13 @@ map <leader>a :w\|:!rake test<cr>
 " Shortcut for editing and save-with-reload for .vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :source $MYVIMRC<CR>
+
+" Quick save
+nmap <leader>w :w<CR>
+nmap <leader>wq :wq<CR>
+
+" Easy command mode
+nmap <leader><space> :
 
 " Map ; to : for less shift-key action
 nnoremap ; :
