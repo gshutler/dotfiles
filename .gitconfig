@@ -15,9 +15,6 @@
 [push]
   default = upstream
 
-[status]
-  short = true
-
 [alias]
   amend = commit --amend
   ch = checkout
@@ -37,7 +34,7 @@
   nomerged = branch --no-merged
   pff-only = pull --ff-only
   pusho = push -u origin
-  s = status
+  s = status --short
 
 [filter "media"]
   clean = git-media-clean %f
