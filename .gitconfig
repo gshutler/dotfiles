@@ -23,6 +23,7 @@
   ch = checkout
   cm = commit --verbose
   co = checkout
+  fall = fetch --all
   ff-only = merge --ff-only
   ffonly = merge --ff-only
   ma = checkout master
