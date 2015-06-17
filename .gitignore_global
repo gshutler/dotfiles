@@ -5,8 +5,8 @@
 .bundle
 .ctrlp
 .powenv
-bin
-exe
-pkg
-tmp
-vendor
+/bin
+/exe
+/pkg
+/tmp
+/vendor
