@@ -46,7 +46,8 @@ set hidden
 set undolevels=1000
 
 " Reduce the lag of pressing O just after Esc
-set timeoutlen=200
+set notimeout
+set ttimeout
 
 " Column limit highlighting plus file specific limit definitions
 set colorcolumn=+1
@@ -122,18 +123,19 @@ let mapleader = " "
 map <leader>a :w\|:!rake test<cr>
 
 " Shortcut for editing and save-with-reload for .vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :source $MYVIMRC<CR>
+nmap <silent> <leader>re :e $MYVIMRC<CR>
+nmap <silent> <leader>rs :source $MYVIMRC<CR>
 
 " Quick save
 nmap <leader>w :w<CR>
-nmap <leader>wq :wq<CR>
+nmap <leader>q :wq<CR>
+
+" Split creation
+nmap <leader>v :vsplit<CR>:CtrlP<CR>
+nmap <leader>s :split<CR>:CtrlP<CR>
 
 " CtrlP aliases
 nmap <leader>p :CtrlP<CR>
-
-" Easy command mode
-nmap <leader><space> :
 
 " Map ; to : for less shift-key action
 nnoremap ; :
@@ -157,10 +159,19 @@ endfunction
 nnoremap <silent> <F10> :call ToggleLogs()<CR>
 
 " Simpler split navigation
+noremap <leader>h <c-w>h
+noremap <leader>j <c-w>j
+noremap <leader>k <c-w>k
+noremap <leader>l <c-w>l
+
 noremap <c-h> <c-w>h
 noremap <c-j> <c-w>j
 noremap <c-k> <c-w>k
 noremap <c-l> <c-w>l
+
+" Tab for paragraph movement
+noremap <TAB> }
+noremap <S-TAB> {
 
 set undofile            " Save undo's after file closes
 set undodir=~/.vim/undo " where to save undo histories
