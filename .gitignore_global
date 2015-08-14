@@ -1,4 +1,5 @@
 *.swp
+*.pid
 *~
 .DS_Store
 .agignore
