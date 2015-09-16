@@ -8,10 +8,14 @@ files=`find . -type d \( \
                   -path ./.sass-cache -o \
                   -path ./app/assets/fonts -o \
                   -path ./app/assets/images -o \
+                  -path ./build -o \
                   -path ./log -o \
                   -path ./node_modules -o \
+                  -path ./**/obj/* -o \
+                  -path ./packages -o \
                   -path ./public -o \
                   -path ./tmp -o \
+                  -path ./tools -o \
                   -path ./vendor \
               \) \
               -prune -o \
