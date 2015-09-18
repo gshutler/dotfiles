@@ -7,4 +7,6 @@ echo ""
 echo " #### VROOOM! ####"
 echo ""
 
+sleep 0.5
+
 git $@
