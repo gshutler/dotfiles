@@ -22,6 +22,7 @@
 
 [alias]
   amend = commit --amend
+  cached = diff --cached
   ch = checkout
   cm = commit --verbose
   co = checkout
