@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+cd ~/todo
+
+current=`cat .current`
+
+mvim -v "$current"
+
+find . -name '*.todo' -print0 | xargs -0 git add
+
+git commit -m "Automated commit"
