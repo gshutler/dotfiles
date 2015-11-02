@@ -1,8 +1,12 @@
 #! /usr/bin/env bash
 
-cd ~/todo
-
-current=`cat .current`
+if [ -a ".todo/current" ]; then
+  current=`cat .todo/current`
+  cd ~/todo
+else
+  cd ~/todo
+  current=`cat .current`
+fi
 
 mvim -v "$current"
 
