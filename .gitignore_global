@@ -7,6 +7,7 @@
 .bundle
 .ctrlp
 .powenv
+.todo
 /bin
 /exe
 /pkg
