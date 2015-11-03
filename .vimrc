@@ -8,7 +8,7 @@ colorscheme molokai
 set exrc
 
 " Go to last position if known when opening a file
-autocmd BufReadPost todo if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+autocmd BufReadPost *.todo,*.cs if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
 " Always show status bar
 set laststatus=2
