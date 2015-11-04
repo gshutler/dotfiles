@@ -11,7 +11,7 @@ bind 0:ctrl;alt;cmd  relaunch
 # Standard window sizes
 bind 1:alt     move screenSizeX*0.2;0  screenSizeX*0.6;screenSizeY*0.8
 bind 2:alt     move screenSizeX*0.25;0 screenSizeX*0.5;screenSizeY*0.6
-bind 0:alt     move 0;0                screenSizeX;screenSizeY
+bind 9:alt     move 0;0                screenSizeX;screenSizeY
 
 # Window movements
 bind 0:alt     move screenSizeX/2-windowSizeX/2;0          windowSizeX;windowSizeY
