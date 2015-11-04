@@ -14,8 +14,8 @@ bind 2:alt     move screenSizeX*0.25;0 screenSizeX*0.5;screenSizeY*0.6
 bind 9:alt     move 0;0                screenSizeX;screenSizeY
 
 # Window movements
-bind 0:alt     move screenSizeX/2-windowSizeX/2;0          windowSizeX;windowSizeY
-bind right:alt move screenSizeX-windowSizeX;windowTopLeftY windowSizeX;windowSizeY
-bind left:alt  move 0;windowTopLeftY                       windowSizeX;windowSizeY
-bind up:alt    move windowTopLeftX;0                       windowSizeX;windowSizeY
-bind down:alt  move windowTopLeftX;screenSizeY-windowSizeY windowSizeX;windowSizeY
+bind 0:ctrl;alt     move screenSizeX/2-windowSizeX/2;0          windowSizeX;windowSizeY
+bind right:ctrl;alt move screenSizeX-windowSizeX;windowTopLeftY windowSizeX;windowSizeY
+bind left:ctrl;alt  move 0;windowTopLeftY                       windowSizeX;windowSizeY
+bind up:ctrl;alt    move windowTopLeftX;0                       windowSizeX;windowSizeY
+bind down:ctrl;alt  move windowTopLeftX;screenSizeY-windowSizeY windowSizeX;windowSizeY
