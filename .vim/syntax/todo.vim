@@ -1,10 +1,15 @@
-syntax region heading matchgroup=heading start=/^##* / end=/$/ keepend oneline
 syntax region bold matchgroup=bold start='*' end='*' keepend oneline
+syntax region heading matchgroup=heading start='\v^##* ' end='\v$' keepend oneline
+syntax region comments matchgroup=comments start='\v^(    )+[^#]' end='\v$' keepend oneline
 
-syntax match check /X/ contained
-syntax region checkbox matchgroup=checkbox start=/ *\[/ end="]" keepend oneline contains=check
+syntax match check 'X' contained
+syntax region checkbox matchgroup=checkbox start='\v *\[' end=']' keepend oneline contains=check
 
-highlight heading ctermfg=red guifg=red
+syntax match hashtag '\v#[^# ][^ ]*'
+
 highlight bold ctermfg=red guifg=red
-highlight checkbox ctermfg=yellow guifg=yellow
 highlight check ctermfg=green guifg=green
+highlight checkbox ctermfg=yellow guifg=yellow
+highlight comments ctermfg=darkgray guifg=darkgray
+highlight hashtag ctermfg=cyan guifg=cyan
+highlight heading ctermfg=red guifg=red
