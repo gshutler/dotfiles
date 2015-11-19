@@ -119,6 +119,9 @@ nnoremap <F8> my:%s/\s\+$//e<CR>:%s/\n\{3,}/\r\r/e<CR>`y
 imap jj <Esc>
 imap kk <Esc>
 
+" Double space whilst in insert mode returns to normal mode.
+imap <space><space> <Esc>
+
 " Changed active leader to ','
 let mapleader = " "
 
