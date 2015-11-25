@@ -1,6 +1,6 @@
 syntax region bold matchgroup=bold start='*' end='*' keepend oneline
 syntax region heading matchgroup=heading start='\v^##* ' end='\v$' keepend oneline
-syntax region comments matchgroup=comments start='\v^(    )+[^#]' end='\v$' keepend oneline
+syntax region comments matchgroup=comments start='\v^(    )+[^#]' end='\v$' keepend oneline contains=hashtag
 
 syntax match check 'X' contained
 syntax region checkbox matchgroup=checkbox start='\v *\[' end=']' keepend oneline contains=check
