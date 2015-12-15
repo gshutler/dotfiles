@@ -32,6 +32,7 @@
   ma = checkout master
   mas = checkout master
   master = checkout master
+  mt = mergetool
   new = checkout -b
   newb = checkout -b
   no-ff = merge --no-ff
