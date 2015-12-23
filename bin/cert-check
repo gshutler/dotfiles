@@ -1,0 +1,14 @@
+#! /bin/bash
+
+# Fail fast
+set -o errexit
+
+echo
+echo "Checking cert for $1"
+echo
+
+echo \
+  | openssl s_client -showcerts -connect $1:443 2>/dev/null \
+  | openssl x509 -inform pem -noout -text \
+  | grep -A 2 Validity \
+  | sed 's/^        //g'
