@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+# Fail fast
+set -o errexit
+
+if [ -z "$1" ]; then
+  git checkout $(git branch --no-merged | selecta)
+else
+  git checkout $(git branch --no-merged | selecta --search "$1")
+fi
