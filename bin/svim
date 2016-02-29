@@ -8,6 +8,7 @@ files=`find . -type d \( \
                   -path ./.sass-cache -o \
                   -path ./app/assets/fonts -o \
                   -path ./app/assets/images -o \
+                  -path ./artifacts -o \
                   -path ./build -o \
                   -path ./log -o \
                   -path ./node_modules -o \
