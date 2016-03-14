@@ -46,7 +46,6 @@ set scrolloff=4 " Always show 4 lines of context at the top/bottom
 
 " Hide buffers rather than closing them to maintain undo history
 set hidden
-set undolevels=1000
 
 " Reduce the lag of pressing O just after Esc
 set notimeout
@@ -124,9 +123,6 @@ imap kk <Esc>
 " Changed active leader to ','
 let mapleader = " "
 
-" Run 'rake test' after saving
-map <leader>a :w\|:!rake test<cr>
-
 " Shortcut for editing and save-with-reload for .vimrc
 nmap <silent> <leader>re :e $MYVIMRC<CR>
 nmap <silent> <leader>rs :source $MYVIMRC<CR>
@@ -178,7 +174,7 @@ noremap <c-l> <c-w>l
 noremap <TAB> }
 noremap <S-TAB> {
 
-set undofile            " Save undo's after file closes
-set undodir=~/.vim/undo " where to save undo histories
-set undolevels=1000     " How many undos
-set undoreload=10000    " number of lines to save for undo
+set undofile                " Save undos after file closes
+set undodir=~/.vim/undodir/ " Where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " Number of lines to save for undo
