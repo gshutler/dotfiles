@@ -8,7 +8,7 @@ colorscheme molokai
 set exrc
 
 " Go to last position if known when opening a file
-autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"zz" | endif
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") && &filetype != "gitcommit" | exe "normal! g`\"zz" | endif
 
 " Always show status bar
 set laststatus=2
