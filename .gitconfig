@@ -26,6 +26,7 @@
   ch = checkout
   cm = commit --verbose
   co = checkout
+  d = diff
   fall = fetch --all
   ff-only = merge --ff-only
   ffonly = merge --ff-only
