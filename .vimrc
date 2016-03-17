@@ -66,6 +66,9 @@ set incsearch
 set listchars=tab:»·,trail:·,precedes:<,extends:>
 set list
 
+" Include - as part of words for autocomplete and so on
+set iskeyword+=\-
+
 " 256 color reference http://www.mudpedia.org/mediawiki/index.php/Xterm_256_colors
 highlight ColorColumn  ctermbg=232
 highlight CursorLine   ctermbg=235
