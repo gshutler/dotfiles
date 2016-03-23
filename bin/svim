@@ -17,7 +17,8 @@ files=`find . -type d \( \
                   -path ./public -o \
                   -path ./tmp -o \
                   -path ./tools -o \
-                  -path ./vendor \
+                  -path ./vendor -o\
+                  -path ./.vim/undodir \
               \) \
               -prune -o \
               -type f -print | sed -e "s/^\.\///"`
