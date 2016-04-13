@@ -29,6 +29,7 @@
   d = diff
   fall = fetch --all
   ff-only = merge --ff-only
+  ffo = merge --ff-only
   ffonly = merge --ff-only
   ma = checkout master
   mas = checkout master
