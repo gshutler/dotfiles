@@ -28,8 +28,8 @@
   co = checkout
   d = diff
   fall = fetch --all
+  ffm = merge --ff-only master
   ffo = merge --ff-only
-  ffom = merge --ff-only master
   ma = checkout master
   mt = mergetool
   new = checkout -b
