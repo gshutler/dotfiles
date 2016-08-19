@@ -4,3 +4,4 @@
 
 alias code="source ~/bin/code"
 alias root="source ~/bin/root"
+alias scd="source ~/bin/scd"

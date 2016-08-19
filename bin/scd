@@ -1,0 +1,29 @@
+#! /usr/bin/env bash
+
+# Fail fast
+set -o errexit
+
+files=`find . -type d \( \
+                  -path ./.git -o \
+                  -path ./.sass-cache -o \
+                  -path ./app/assets/fonts -o \
+                  -path ./app/assets/images -o \
+                  -path ./artifacts -o \
+                  -path ./build -o \
+                  -path ./log -o \
+                  -path ./node_modules -o \
+                  -path ./**/obj/* -o \
+                  -path ./packages -o \
+                  -path ./public -o \
+                  -path ./tmp -o \
+                  -path ./tools -o \
+                  -path ./.vim/undodir \
+              \) \
+              -prune -o \
+              -type d -print | sed -e "s/^\.\///"`
+
+if [ -z "$1" ]; then
+  cd $(echo -e "$files" | selecta)
+else
+  cd $(echo -e "$files" | selecta --search "$1")
+fi
