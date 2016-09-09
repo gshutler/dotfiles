@@ -35,6 +35,7 @@
   new = checkout -b
   noff = merge --no-ff
   nom = branch --no-merged
+  pf = pull --ff-only
   pff-only = pull --ff-only
   pusho = push -u origin
   s = status --short
