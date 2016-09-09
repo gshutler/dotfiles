@@ -1,0 +1,16 @@
+#! /usr/bin/env ruby
+
+require "uri"
+
+branch=`git rev-parse --abbrev-ref HEAD`.chomp
+remotes=`git remote -v`
+
+remote=/^origin.+\(push\)$/.match(remotes)
+
+name, url, method = remote.to_s.split
+
+uri = URI "https://#{url.split("@", 2).last.sub(":", "/").sub(/\.git\z/, "")}"
+
+browser_url = "#{uri}/tree/#{branch}"
+
+`open #{browser_url}`

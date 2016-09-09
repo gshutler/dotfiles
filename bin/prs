@@ -1,0 +1,15 @@
+#! /usr/bin/env ruby
+
+require "uri"
+
+remotes=`git remote -v`
+
+remote=/^origin.+\(push\)$/.match(remotes)
+
+name, url, method = remote.to_s.split
+
+uri = "https://#{url.split("@", 2).last.sub(":", "/").sub(/\.git\z/, "")}"
+
+browser_url = "#{uri}/pulls"
+
+`open #{browser_url}`
