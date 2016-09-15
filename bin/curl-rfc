@@ -8,7 +8,7 @@ rfc_url=https://www.ietf.org/rfc/rfc$1.txt
 mkdir -p $tmp_dir
 curl $rfc_url --output $tmp_file
 
-title=`head -n 30 $tmp_file | grep "^[ ]\{4,40\}" | xargs echo | sed 's/ /-/g'`
+title=`head -n 30 $tmp_file | grep "^[ ]\{4,40\}" | xargs echo | sed 's,[ \/],-,g'`
 
 final_file=$rfc_dir/rfc$1-$title.txt
 
