@@ -1,0 +1,14 @@
+#! /usr/bin/env sh
+
+# Fail fast
+set -o errexit
+
+cd ~/RFCs
+
+rfcs=`find . -maxdepth 1 -type f -print | sed 's,./,,'`
+
+if [ -z "$1" ]; then
+  $EDITOR $(echo -e "$rfcs" | selecta)
+else
+  $EDITOR $(echo -e "$rfcs" | selecta --search "$1")
+fi
