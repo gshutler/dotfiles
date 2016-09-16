@@ -8,7 +8,13 @@ cd ~/RFCs
 rfcs=`find . -maxdepth 1 -type f -print | sed 's,./,,'`
 
 if [ -z "$1" ]; then
-  $EDITOR $(echo "$rfcs" | selecta)
+  rfc_file=`echo "$rfcs" | selecta`
 else
-  $EDITOR $(echo "$rfcs" | selecta --search "$1")
+  rfc_file=`echo "$rfcs" | selecta --search "$1"`
 fi
+
+rfc=`head -n 10 $rfc_file | grep "^Request for Comments" | cut -d " " -f 4`
+
+echo -n "\033]0;RFC ${rfc}\007"
+
+$EDITOR $rfc_file
