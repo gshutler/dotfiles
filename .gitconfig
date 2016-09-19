@@ -24,6 +24,7 @@
   a = add .
   amend = commit --amend
   cached = diff --cached
+  c = commit --verbose
   cm = commit --verbose
   co = checkout
   d = diff
@@ -35,11 +36,13 @@
   l = log --graph --all --oneline --decorate
   ma = checkout master
   mt = mergetool
+  n = checkout -b
   new = checkout -b
   noff = merge --no-ff
   nom = branch --no-merged
   p = push
-  pff-only = pull --ff-only
+  pff-only = pull --ff-only --all
+  pp = pull --ff-only --all
   pusho = push -u origin
   s = status --short
 
