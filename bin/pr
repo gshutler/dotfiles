@@ -1,0 +1,21 @@
+#! /usr/bin/env ruby
+
+require "uri"
+
+remotes=`git remote -v`
+remote=/^origin.+\(push\)$/.match(remotes)
+
+name, url, method = remote.to_s.split
+
+branches=`git branch -r --contains HEAD`
+pr_branch=/origin\/pr\/(?<pr>\d+)$/.match(branches)
+
+if pr_branch && pr = pr_branch[:pr]
+  uri = URI "https://#{url.split("@", 2).last.sub(":", "/").sub(/\.git\z/, "")}"
+  browser_url = "#{uri}/pull/#{pr}"
+else
+  puts "\nNo PR found"
+  exit 1
+end
+
+`open #{browser_url}`
