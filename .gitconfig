@@ -42,8 +42,8 @@
   nom = branch --no-merged
   p = push
   pff-only = pull --ff-only --all
+  po = "!git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
   pp = pull --ff-only --all
-  pusho = push -u origin
   s = status --short
 
 [filter "media"]
