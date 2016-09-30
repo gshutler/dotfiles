@@ -101,20 +101,14 @@ let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', '
 
 " COMMENTING HELPERS
 
-" Alt+j whilst in normal mode joins this line with the next one.
-nnoremap ∆ Jd2wi <Esc>w
-" Alt+k whilst in normal mode joins this line with the previous one.
-nnoremap ˚ kJd2wi <Esc>w
-
 function! ObeyTextWidth()
   return "normal! 0" . &textwidth . "llF r\<CR>"
 endfunction
 
 " Ctrl+f whilst in normal mode breaks the line for col80 formatting.
 nnoremap <C-f> :execute ObeyTextWidth()<CR>
-" As does Alt+f
-nnoremap ƒ :execute ObeyTextWidth()<CR>
-
+" Ctrl+j whilst in normal mode joins this line with the next one.
+nnoremap <C-j> Jd2wi <Esc>w
 " Ctrl+k whilst in normal mode joins this line with the previous one.
 nnoremap <C-k> kJd2wi <Esc>
 
@@ -169,11 +163,6 @@ noremap <leader>h <c-w>h
 noremap <leader>j <c-w>j
 noremap <leader>k <c-w>k
 noremap <leader>l <c-w>l
-
-noremap <c-h> <c-w>h
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
-noremap <c-l> <c-w>l
 
 " Tab for paragraph movement
 noremap <TAB> }
