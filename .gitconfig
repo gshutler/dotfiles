@@ -28,6 +28,7 @@
   cm = commit --verbose
   co = checkout
   d = diff
+  dm = diff master
   f = fetch --all
   fall = fetch --all
   ff = merge --ff-only
