@@ -7,7 +7,7 @@ rfc_url=https://www.ietf.org/rfc/rfc$1.txt
 mkdir -p $rfc_dir
 curl $rfc_url --output $tmp_file
 
-title=`head -n 30 $tmp_file | sed '/^Abstract/q' | grep "^[ ]\{3,40\}" | xargs echo | sed 's,[ \/\(\)\:],-,g'`
+title=`head -n 30 $tmp_file | sed -e '/^Abstract/q' | sed '/^Status of This Memo/q' | grep "^[ ]\{3,40\}[^ ]" | xargs echo | sed 's,[ \/\(\)\:],-,g' | sed "s/-\{2,\}/-/g"`
 
 final_file=$rfc_dir/rfc$1-$title.txt
 
