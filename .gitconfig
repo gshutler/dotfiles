@@ -9,6 +9,9 @@
   excludesfile = /Users/gshutler/.gitignore_global
   editor = mvim -v +startinsert
 
+[diff]
+  indentHeuristic = true
+
 [merge]
   defaultToUpstream = true
   tool = vimdiff
