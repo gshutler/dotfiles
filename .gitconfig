@@ -37,7 +37,8 @@
   ff = merge --ff-only
   ffm = merge --ff-only master
   ffo = merge --ff-only
-  l = log --graph --all --oneline --decorate
+  l = log --graph --oneline --decorate
+  ll = log --graph --all --oneline --decorate
   ma = checkout master
   mt = mergetool
   n = checkout -b
