@@ -7,13 +7,24 @@ remote=/^origin.+\(push\)$/.match(remotes)
 
 name, url, method = remote.to_s.split
 
-branches=`git branch -r --contains HEAD`
-pr_branch=/origin\/pr\/(?<pr>\d+)$/.match(branches)
+def find_pr_url(url)
+  commits=`git log --oneline --decorate --no-merges --max-count=30 | grep "origin/pr/"`
+  pr_branch=/origin\/pr\/(?<pr>\d+)/.match(commits)
 
-if pr_branch && pr = pr_branch[:pr]
+  return unless pr_branch && pr = pr_branch[:pr]
   uri = URI "https://#{url.split("@", 2).last.sub(":", "/").sub(/\.git\z/, "")}"
-  browser_url = "#{uri}/pull/#{pr}"
-else
+  "#{uri}/pull/#{pr}"
+end
+
+browser_url = find_pr_url(url)
+
+unless browser_url
+  puts "\nUpdating references"
+  `git fetch`
+  browser_url = find_pr_url(url)
+end
+
+unless browser_url
   puts "\nNo PR found"
   exit 1
 end
