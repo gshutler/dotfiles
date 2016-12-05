@@ -2,7 +2,7 @@ syn on
 
 let g:molokai_original = 1
 set t_Co=256
-colorscheme molokai
+colorscheme spartan
 
 " Load a local .vimrc if present (allows for project-specific settings)
 set exrc
