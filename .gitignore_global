@@ -7,6 +7,7 @@
 .bundle
 .ctrlp
 .powenv
+.ruby-version
 .todo
 /bin
 /exe
