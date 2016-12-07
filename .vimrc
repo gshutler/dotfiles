@@ -63,8 +63,12 @@ set nohlsearch
 set incsearch
 
 " Visible whitespace
-set listchars=tab:»·,trail:·,precedes:<,extends:>
+set listchars=tab:»·,precedes:<,extends:>
 set list
+
+highlight TrailingWhitespace ctermbg=DarkGray
+autocmd InsertEnter * match
+autocmd InsertLeave * match TrailingWhitespace /\s\+$/
 
 " Include -, !, and ? as part of words for autocomplete and so on
 set iskeyword+=\-
