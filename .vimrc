@@ -63,6 +63,7 @@ autocmd FileType gitcommit setlocal spell textwidth=72
 set nohlsearch
 set incsearch
 
+set fillchars+=vert:\ 
 " Visible whitespace
 set listchars=tab:»·,precedes:<,extends:>
 set list

@@ -618,7 +618,7 @@ else
         hi TabLine                      guibg=#b2b2b2
         hi TabLineFill                  guibg=#b2b2b2
         hi TabLineSel                   guibg=#005f87
-        hi VertSplit                    guibg=#b2b2b2
+        hi VertSplit                    guibg=#303030
     endif
 endif
 
