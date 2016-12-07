@@ -1,0 +1,10 @@
+#! /bin/bash
+
+# Fail fast
+set -o errexit
+
+gem_name=`bundle list | cut -d " " -f 4 | selecta`
+dir=`bundle show $gem_name`
+cd $dir
+
+touch .ctrlp
