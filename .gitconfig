@@ -25,6 +25,7 @@
 
 [alias]
   a = add .
+  ap = add -p
   amend = commit --amend
   cached = diff --cached
   c = commit --verbose
