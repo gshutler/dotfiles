@@ -41,6 +41,7 @@ filetype plugin indent on
 set expandtab  " Replace tabs with spaces
 set number     " Show line numbers
 set cursorline " Highlight current line
+set cursorcolumn " Highlight current column
 set ruler
 set scrolloff=4 " Always show 4 lines of context at the top/bottom
 
@@ -78,6 +79,7 @@ set iskeyword+=\?
 " 256 color reference http://www.mudpedia.org/mediawiki/index.php/Xterm_256_colors
 highlight ColorColumn  ctermbg=232
 highlight CursorLine   ctermbg=235
+highlight CursorColumn ctermbg=234
 highlight Pmenu        ctermfg=Black    ctermbg=DarkGray
 highlight PmenuSel     ctermfg=Black    ctermbg=White
 highlight StatusLine   ctermfg=Black    ctermbg=White    cterm=none gui=none
