@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+dig +short "$1" mx
