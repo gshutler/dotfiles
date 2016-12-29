@@ -80,7 +80,7 @@ set iskeyword+=\?
 " 256 color reference http://www.mudpedia.org/mediawiki/index.php/Xterm_256_colors
 highlight ColorColumn  ctermbg=232
 highlight CursorLine   ctermbg=235
-highlight CursorColumn ctermbg=234
+highlight CursorColumn ctermbg=235
 highlight Pmenu        ctermfg=Black    ctermbg=DarkGray
 highlight PmenuSel     ctermfg=Black    ctermbg=White
 highlight StatusLine   ctermfg=Black    ctermbg=White    cterm=none gui=none
