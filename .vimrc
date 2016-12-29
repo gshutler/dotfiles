@@ -120,6 +120,7 @@ nnoremap <C-j> Jd2wi <Esc>w
 nnoremap <C-k> kJd2wi <Esc>
 " Map K to join line above rather than default of search for command
 nnoremap <S-k> kJ
+vnoremap <S-k> J
 
 " F8 in normal mode removes all trailing whitespace and extra blank lines.
 nnoremap <F8> my:%s/\s\+$//e<CR>:%s/\n\{3,}/\r\r/e<CR>`y
