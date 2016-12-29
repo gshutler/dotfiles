@@ -118,6 +118,8 @@ nnoremap <C-f> :execute ObeyTextWidth()<CR>
 nnoremap <C-j> Jd2wi <Esc>w
 " Ctrl+k whilst in normal mode joins this line with the previous one.
 nnoremap <C-k> kJd2wi <Esc>
+" Map K to join line above rather than default of search for command
+nnoremap <S-k> kJ
 
 " F8 in normal mode removes all trailing whitespace and extra blank lines.
 nnoremap <F8> my:%s/\s\+$//e<CR>:%s/\n\{3,}/\r\r/e<CR>`y
