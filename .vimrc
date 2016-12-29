@@ -4,6 +4,9 @@ set t_Co=256
 colorscheme lucius
 LuciusBlack
 
+" Lucius Customizations
+highlight def link rubySymbol Identifier
+
 " Load a local .vimrc if present (allows for project-specific settings)
 set exrc
 
