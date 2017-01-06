@@ -13,6 +13,9 @@ set exrc
 " Go to last position if known when opening a file
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") && &filetype != "gitcommit" | exe "normal! g`\"zz" | endif
 
+" Change active leader to ' '
+let mapleader = " "
+
 " Always show status bar
 set laststatus=2
 
@@ -103,6 +106,24 @@ let g:ctrlp_user_command = 'ag %s --ignore-case --nocolor --nogroup --hidden -g 
 " CtrlP - Don't use caching
 let g:ctrlp_use_caching = 0
 
+" Grep - custom setup
+set grepprg=ag\ --nogroup\ --nocolor\ --vimgrep
+set grepformat^=%f:%l:%c:%m " file:line:column:message
+
+function! CustomSearch()
+  let grep_term = input("Enter search term: ")
+  if !empty(grep_term)
+    execute 'silent grep' grep_term | copen
+  else
+    echo "Empty search term"
+  endif
+  redraw!
+endfunction
+
+command! CustomSearch call CustomSearch()
+
+nnoremap <leader>f :CustomSearch<CR>
+
 " HTML formatting - treat li and p as blocks
 let g:html_indent_tags = 'li\|p'
 
@@ -131,9 +152,6 @@ nnoremap <F8> my:%s/\s\+$//e<CR>:%s/\n\{3,}/\r\r/e<CR>`y
 " jj or kk whilst in insert mode returns to normal mode.
 imap jj <Esc>
 imap kk <Esc>
-
-" Changed active leader to ','
-let mapleader = " "
 
 " Shortcut for editing and save-with-reload for .vimrc
 nmap <silent> <leader>re :e $MYVIMRC<CR>
