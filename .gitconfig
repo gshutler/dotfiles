@@ -33,6 +33,7 @@
   co = checkout
   d = diff
   dm = diff master...
+  dw = diff -w
   f = fetch --all
   fall = fetch --all
   ff = merge --ff-only
