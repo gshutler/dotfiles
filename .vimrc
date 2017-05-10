@@ -54,6 +54,9 @@ set scrolloff=4 " Always show 4 lines of context at the top/bottom
 " Hide buffers rather than closing them to maintain undo history
 set hidden
 
+" Don't redraw during macros
+set lazyredraw
+
 " Reduce the lag of pressing O just after Esc
 set notimeout
 set ttimeout
