@@ -9,7 +9,6 @@
 .powenv
 .ruby-version
 .todo
-/bin
 /exe
 /pkg
 /tags
