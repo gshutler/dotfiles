@@ -152,10 +152,6 @@ vnoremap <S-k> J
 " F8 in normal mode removes all trailing whitespace and extra blank lines.
 nnoremap <F8> my:%s/\s\+$//e<CR>:%s/\n\{3,}/\r\r/e<CR>`y
 
-" jj or kk whilst in insert mode returns to normal mode.
-imap jj <Esc>
-imap kk <Esc>
-
 " Shortcut for editing and save-with-reload for .vimrc
 nmap <silent> <leader>re :e $MYVIMRC<CR>
 nmap <silent> <leader>rs :source $MYVIMRC<CR>
