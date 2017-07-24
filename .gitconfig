@@ -45,6 +45,7 @@
   l = log --graph --oneline --decorate
   ll = log --graph --all --oneline --decorate
   ma = checkout master
+  mp = "!git checkout master && git pull --ff-only"
   mt = mergetool
   n = checkout -b
   new = checkout -b
