@@ -14,7 +14,6 @@ files=`find . -type d \( \
                   -path ./node_modules -o \
                   -path ./**/obj/* -o \
                   -path ./packages -o \
-                  -path ./public -o \
                   -path ./tmp -o \
                   -path ./tools -o \
                   -path ./vendor -o\
