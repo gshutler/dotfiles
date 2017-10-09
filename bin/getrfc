@@ -1,11 +1,13 @@
 #! /usr/bin/env sh
 
+set -o errexit
+
 rfc_dir=~/RFCs
 tmp_file=$(mktemp)
 rfc_url=https://www.ietf.org/rfc/rfc$1.txt
 
 mkdir -p $rfc_dir
-curl $rfc_url --output $tmp_file
+curl $rfc_url --fail --output $tmp_file
 
 human_title=`head -n 30 $tmp_file | sed -e '/^Abstract/q' | sed '/^Status of [tT]his [mM]emo/q' | grep "^[ ]\{3,40\}[^ ]" | xargs echo`
 file_title=`echo $human_title | sed 's,[ \/\(\)\:],-,g' | sed "s/-\{2,\}/-/g"`
