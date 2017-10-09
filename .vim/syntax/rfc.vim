@@ -23,7 +23,7 @@ syn match rfcDots	/\v\.\.+\ze\d+$/ contained
 syn match rfcContents	/^\v\s+(([A-Z]\.)?([0-9]+\.?)+|Appendix|Full Copyright Statement).*(\n.*)?(\s|\.)\d+$/ contains=rfcDots
 syn keyword rfcNote	NOTE note: Note: NOTE: Notes Notes:
 " Highlight [sic] here so it won't be highlighted as rfcReference
-syn match rfcKeyword  "\(MUST\(\s*[ \n]\+\s*NOT\)*\|REQUIRED\|SHALL\(\s*[ \n]\+\s*NOT\)*\|SHOULD\(\s*[ \n]\+\s*NOT\)*\|RECOMMENDED\|MAY\|OPTIONAL\|\[sic\]\)"
+syn match rfcKeyword  "\(NOT\s*[ \n]\+\s*\)*\(MUST\|REQUIRED\|SHALL\|SHOULD\|RECOMMENDED\|MAY\|OPTIONAL\|\[sic\]\)\(\s*[ \n]\+\s*NOT\)*"
 
 hi link rfcTitle	Title
 hi link rfcTheTitle	Type
