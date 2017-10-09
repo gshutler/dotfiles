@@ -4,7 +4,7 @@ echo "__    _"
 echo " \\\`../ |o_..__"
 echo " \`.,(o)______(o).>"
 echo ""
-echo " #### VROOOM! ####"
+echo -e " \033[33m#### \033[31mVROOOM! \033[33m####\033[0m"
 echo ""
 
 sleep 0.5
