@@ -1,8 +1,5 @@
 #! /usr/bin/env bash
 
-# Fail fast
-set -o errexit
-
 files=`find . -type d \( \
                   -path ./.git -o \
                   -path ./.sass-cache -o \
