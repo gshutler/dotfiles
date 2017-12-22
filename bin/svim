@@ -23,7 +23,7 @@ files=`find . -type d \( \
               -type f -print | sed -e "s/^\.\///"`
 
 if [ -z "$1" ]; then
-  mvim -v $(echo -e "$files" | selecta)
+  nvim $(echo -e "$files" | selecta)
 else
-  mvim -v $(echo -e "$files" | selecta --search "$1")
+  nvim $(echo -e "$files" | selecta --search "$1")
 fi

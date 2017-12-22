@@ -10,6 +10,9 @@ highlight def link rubySymbol Identifier
 " Load a local .vimrc if present (allows for project-specific settings)
 set exrc
 
+" Disable neovim's cursor changing
+set guicursor=
+
 " Go to last position if known when opening a file
 autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") && &filetype != "gitcommit" | exe "normal! g`\"zz" | endif
 
