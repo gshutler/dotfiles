@@ -12,6 +12,7 @@ bind 0:ctrl;alt;cmd  relaunch
 bind 1:alt     move screenSizeX*0.2;0             screenSizeX*0.6;screenSizeY*0.8
 bind 2:alt     move screenSizeX*0.25;0            screenSizeX*0.5;screenSizeY*0.6
 bind 4:alt     move screenSizeX*0.15;0            screenSizeX*0.7;screenSizeY
+bind 7:alt     move screenSizeX/2-450;0 900;screenSizeY
 bind 8:alt     move screenSizeX/2-windowSizeX/2;0 windowSizeX;windowSizeY
 bind 9:alt     move 0;0                           screenSizeX;screenSizeY
 
