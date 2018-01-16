@@ -10,9 +10,9 @@ trap resetPwdOnCancel INT TERM
 cd ~/Code
 
 if [ -z "$1" ]; then
-  cd $(find . -maxdepth 3 -type d -name .git | sed -e "s/\/\.git$//" -e "s/^\.\///" | selecta)
+  cd $(find -s . -maxdepth 3 -type d -name .git | sed -e "s/\/\.git$//" -e "s/^\.\///" | selecta)
 else
-  cd $(find . -maxdepth 3 -type d -name .git | sed -e "s/\/\.git$//" -e "s/^\.\///" | selecta --search "$1")
+  cd $(find -s . -maxdepth 3 -type d -name .git | sed -e "s/\/\.git$//" -e "s/^\.\///" | selecta --search "$1")
 fi
 
 trap - INT TERM

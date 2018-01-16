@@ -3,4 +3,4 @@
 # Fail fast
 set -o errexit
 
-less +F -R -n $@ $(find . -maxdepth 3 -type f -name *.log | selecta)
+less +F -R -n $@ $(find -s . -maxdepth 3 -type f -name *.log | selecta)

@@ -3,7 +3,7 @@
 # Fail fast
 set -o errexit
 
-files=`find . -type d \( \
+files=`find -s . -type d \( \
                   -path ./.git -o \
                   -path ./.sass-cache -o \
                   -path ./app/assets/fonts -o \
