@@ -16,7 +16,8 @@ files=`find -s . -type d \( \
                   -path ./packages -o \
                   -path ./tmp -o \
                   -path ./tools -o \
-                  -path ./vendor -o\
+                  -path ./vendor -o \
+                  -path ./**/vendor/* -o \
                   -path ./.vim/undodir \
               \) \
               -prune -o \
