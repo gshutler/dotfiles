@@ -10,6 +10,7 @@
   editor = mvim -v +startinsert
 
 [diff]
+  colorMoved = zebra
   indentHeuristic = true
 
 [merge]
