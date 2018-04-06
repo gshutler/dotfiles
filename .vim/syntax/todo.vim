@@ -7,9 +7,13 @@ syntax region checkbox matchgroup=checkbox start='\v *\[' end=']' keepend onelin
 
 syntax match hashtag '\v#[^# ][^ ]*'
 
+syntax region codeblock matchgroup=codeblock start='\v^```' end='\v^```'
+
 highlight bold ctermfg=red guifg=red
 highlight check ctermfg=green guifg=green
 highlight checkbox ctermfg=yellow guifg=yellow
 highlight comments ctermfg=darkgray guifg=darkgray
 highlight hashtag ctermfg=cyan guifg=cyan
 highlight heading ctermfg=red guifg=red
+
+highlight codeblock ctermfg=gray guifg=gray
