@@ -4,21 +4,23 @@
 set -o errexit
 
 files=`find -s . -type d \( \
+                  -path ./**/obj/* -o \
+                  -path ./**/vendor/* -o \
+                  -path ./.bundle -o \
                   -path ./.git -o \
                   -path ./.sass-cache -o \
+                  -path ./.secrets -o \
+                  -path ./.vim/undodir -o \
                   -path ./app/assets/fonts -o \
                   -path ./app/assets/images -o \
                   -path ./artifacts -o \
                   -path ./build -o \
                   -path ./log -o \
                   -path ./node_modules -o \
-                  -path ./**/obj/* -o \
                   -path ./packages -o \
                   -path ./tmp -o \
                   -path ./tools -o \
-                  -path ./vendor -o \
-                  -path ./**/vendor/* -o \
-                  -path ./.vim/undodir \
+                  -path ./vendor \
               \) \
               -prune -o \
               -type f -print | sed -e "s/^\.\///"`
