@@ -1,22 +1,22 @@
 [user]
-  name = Garry Shutler
   email = garry@robustsoftware.co.uk
+  name = Garry Shutler
 
 [color]
   ui = auto
 
 [core]
-  excludesfile = /Users/gshutler/.gitignore_global
   editor = mvim -v +startinsert
+  excludesfile = /Users/gshutler/.gitignore_global
 
 [diff]
   colorMoved = zebra
   indentHeuristic = true
 
 [merge]
+  conflictstyle = diff3
   defaultToUpstream = true
   tool = vimdiff
-  conflictstyle = diff3
 
 [mergetool]
   prompt = false
@@ -67,5 +67,5 @@
 
 [filter "lfs"]
   clean = git-lfs clean %f
-  smudge = git-lfs smudge %f
   required = true
+  smudge = git-lfs smudge %f
