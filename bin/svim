@@ -15,6 +15,7 @@ files=`find -s . -type d \( \
                   -path ./app/assets/images -o \
                   -path ./artifacts -o \
                   -path ./build -o \
+                  -path ./coverage -o \
                   -path ./log -o \
                   -path ./node_modules -o \
                   -path ./packages -o \
