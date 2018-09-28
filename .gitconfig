@@ -13,6 +13,9 @@
   colorMoved = zebra
   indentHeuristic = true
 
+[fetch]
+  prune = true
+
 [merge]
   conflictstyle = diff3
   defaultToUpstream = true
