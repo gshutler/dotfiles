@@ -3,7 +3,9 @@
 # Fail fast
 set -o errexit
 
-source ~/.tunnels/$1
+tunnel=$(find ~/.tunnels -type f -exec basename {} ";" | selecta)
+
+source ~/.tunnels/$tunnel
 
 echo
 echo "Tunnel:  localhost:$localport"
