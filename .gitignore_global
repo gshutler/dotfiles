@@ -17,3 +17,4 @@
 /.nvimrc
 /.dockerenv
 /.minikubeenv
+npm-debug.log
