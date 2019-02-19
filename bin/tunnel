@@ -1,0 +1,17 @@
+#! /bin/bash
+
+# Fail fast
+set -o errexit
+
+source ~/.tunnels/$1
+
+echo
+echo "Tunnel:  localhost:$localport"
+echo "Bastion: $bastion"
+echo "Target:  $target"
+echo
+
+# -N no command (tunnel only)
+# -L creates a tunnel
+# localport:address:remoteport
+ssh -N -L $localport:$target $bastion
