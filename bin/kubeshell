@@ -8,10 +8,13 @@ kubeshell=$(find -s ~/.kubeshells -type f -exec basename {} ";" | selecta)
 source ~/.kubeshells/$kubeshell
 
 echo
-echo "Pod selector: $podselector"
-echo "Command:      $command"
+if [ -n "$namespace" ] ; then
+  echo "Namespace: $namespace"
+fi
+echo "Pod args:  $podargs"
+echo "Command:   $command"
 echo
 
-pod=$(kubectl get pods --no-headers --output custom-columns=:metadata.name --selector $podselector | selecta)
+pod=$(kubectl get pods $namespace --no-headers --output custom-columns=:metadata.name $podargs | selecta)
 
-kubectl exec -it $pod -- $command
+kubectl exec -it $pod $namespace -- $command
