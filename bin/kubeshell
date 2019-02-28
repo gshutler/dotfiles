@@ -3,7 +3,7 @@
 # Fail fast
 set -o errexit
 
-kubeshell=$(find -s ~/.kubeshells -type f -exec basename {} ";" | selecta)
+kubeshell=$(find -s ~/.kubeshells -type f -depth 1 ! -name .gitignore -exec basename {} ";" | selecta)
 
 source ~/.kubeshells/$kubeshell
 
@@ -14,6 +14,8 @@ fi
 echo "Pod args:  $podargs"
 echo "Command:   $command"
 echo
+
+echo "kubectl get pods $namespace --no-headers --output custom-columns=:metadata.name $podargs"
 
 pod=$(kubectl get pods $namespace --no-headers --output custom-columns=:metadata.name $podargs | selecta)
 
