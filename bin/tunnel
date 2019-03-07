@@ -3,7 +3,7 @@
 # Fail fast
 set -o errexit
 
-tunnel=$(find -s ~/.tunnels -type f -exec basename {} ";" | selecta)
+tunnel=$(find -s ~/.tunnels -type f -depth 1 ! -name .gitignore -exec basename {} ";" | selecta)
 
 source ~/.tunnels/$tunnel
 
