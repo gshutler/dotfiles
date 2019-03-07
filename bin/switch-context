@@ -1,6 +1,17 @@
 #! /bin/bash
 
+if [ -z "$1" ]; then
+  echo
+  read -p "Enter profile: " profile
+else
+  profile=$1
+fi
+
+if [ -z "$profile" ]; then
+  return 1
+fi
+
 echo
-echo "[aws] Switching to profile \"$1\""
-export AWS_PROFILE=$1
-echo "[kubectl] $(kubectl config use-context $1)"
+echo "[aws] Switching to profile \"$profile\""
+export AWS_PROFILE=$profile
+echo "[kubectl] $(kubectl config use-context $profile)"
