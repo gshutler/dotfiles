@@ -5,4 +5,6 @@ if getline(1) =~ '^#!.* \<ruby\>'
   setfiletype ruby
 elseif getline(1) =~ '^#!.* \<sh\>'
   setfiletype sh
+elseif getline(1) =~ '^#!.*\<bash\>'
+  setfiletype sh
 endif
