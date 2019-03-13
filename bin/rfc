@@ -15,6 +15,6 @@ fi
 
 rfc=`head -n 10 $rfc_file | grep "^Request for Comments" | cut -d " " -f 4`
 
-echo -n "\033]0;RFC ${rfc}\007"
+echo "\033]0;RFC ${rfc}\007"
 
 $EDITOR -M $rfc_file

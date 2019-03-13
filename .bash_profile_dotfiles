@@ -6,4 +6,6 @@ alias code="source ~/bin/code"
 alias root="source ~/bin/root"
 alias scd="source ~/bin/scd"
 alias sgem="source ~/bin/sgem"
-alias ctx="source ~/bin/switch-context"
+alias profile="source ~/bin/switch-profile"
+
+alias k="kubectl"

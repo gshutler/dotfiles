@@ -11,6 +11,8 @@ if [ -z "$profile" ]; then
   return 1
 fi
 
+echo "Setting profile to $profile"
+export profile=$profile
 echo
 echo "[aws] Switching to profile \"$profile\""
 export AWS_PROFILE=$profile
