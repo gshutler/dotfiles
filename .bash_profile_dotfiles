@@ -7,5 +7,6 @@ alias root="source ~/bin/root"
 alias scd="source ~/bin/scd"
 alias sgem="source ~/bin/sgem"
 alias profile="source ~/bin/switch-profile"
+alias p="source ~/bin/switch-profile"
 
 alias k="kubectl"
