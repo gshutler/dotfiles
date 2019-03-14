@@ -7,6 +7,9 @@ alias root="source ~/bin/root"
 alias scd="source ~/bin/scd"
 alias sgem="source ~/bin/sgem"
 alias profile="source ~/bin/switch-profile"
-alias p="source ~/bin/switch-profile"
 
-alias k="kubectl"
+alias p="profile"
+alias pde="profile prod-de"
+alias pus="profile prod-us"
+
+alias pscreen='screen -d -R -S $profile'
