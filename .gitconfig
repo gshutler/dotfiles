@@ -16,6 +16,9 @@
 [fetch]
   prune = true
 
+[log]
+  follow = true
+
 [merge]
   conflictstyle = diff3
   defaultToUpstream = true
