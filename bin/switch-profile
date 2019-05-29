@@ -2,13 +2,18 @@
 
 if [ -z "$1" ]; then
   echo
-  read -p "Enter profile: " profile
+  read -p "Enter profile (empty to clear): " profile
 else
   profile=$1
 fi
 
 if [ -z "$profile" ]; then
-  return 1
+  echo
+  echo "Removing profile"
+  unset profile
+  unset AWS_PROFILE
+  unset KUBECONFIG
+  return
 fi
 
 echo "Setting profile to $profile"
