@@ -44,6 +44,7 @@
   co = checkout
   d = diff
   dm = diff master...
+  du = diff @ @{upstream}
   dw = diff -w
   f = fetch --all
   fall = fetch --all
@@ -65,6 +66,7 @@
   pp = pull --ff-only --all
   ri = rebase -i
   rim = rebase -i master
+  ru = rebase -i @{upstream}
   s = status --short
 
 [filter "media"]
