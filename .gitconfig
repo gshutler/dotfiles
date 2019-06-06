@@ -44,7 +44,7 @@
   co = checkout
   d = diff
   dm = diff master...
-  du = diff @ @{upstream}
+  du = diff @{upstream} @
   dw = diff -w
   f = fetch --all
   fall = fetch --all
