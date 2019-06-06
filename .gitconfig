@@ -77,3 +77,6 @@
   clean = git-lfs clean %f
   required = true
   smudge = git-lfs smudge %f
+
+[includeIf "gitdir:~/Code/cronofy/"]
+  path = .gitconfig-cronofy
