@@ -16,6 +16,7 @@
 [diff]
   colorMoved = zebra
   indentHeuristic = true
+  noPrefix = true
 
 [fetch]
   prune = true
