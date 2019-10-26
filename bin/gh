@@ -9,7 +9,7 @@ remote=/^origin.+\(push\)$/.match(remotes)
 
 name, url, method = remote.to_s.split
 
-uri = URI "https://#{url.split("@", 2).last.sub(":", "/").sub(/\.git\z/, "")}"
+uri = URI "https://#{url.split("@", 2).last.sub("git://", "").sub(":", "/").sub(/\.git\z/, "")}"
 
 browser_url = "#{uri}/pull/#{branch}"
 
