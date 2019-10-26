@@ -1,7 +1,7 @@
 [user]
   email = garry@robustsoftware.co.uk
   name = Garry Shutler
-  signingkey = 3C344A247E0440F8
+  signingkey = 3953326F3B4288C1
 
 [commit]
   gpgsign = true
