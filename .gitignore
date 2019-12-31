@@ -2,3 +2,5 @@
 .vim/.netrwhist
 .vim/undodir
 !bin
+.config/configstore/
+.config/filezilla/
