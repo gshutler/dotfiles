@@ -21,5 +21,6 @@ export PROFILE=$profile
 echo
 echo "[aws] Switching to profile \"$profile\""
 export AWS_PROFILE=$profile
+export AWS_SDK_LOAD_CONFIG=1
 echo "[kubectl] Switching to profile \"$profile\""
 export KUBECONFIG="$HOME/.kube/configs/$profile"
