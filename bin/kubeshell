@@ -15,8 +15,8 @@ echo "Pod args:  $podargs"
 echo "Command:   $command"
 echo
 
-echo "kubectl get pods $namespace --no-headers --output custom-columns=:metadata.name $podargs"
+echo "kubectl get pods $namespace --no-headers --field-selector=status.phase=Running --output custom-columns=:metadata.name $podargs"
 
-pod=$(kubectl get pods $namespace --no-headers --output custom-columns=:metadata.name $podargs | selecta)
+pod=$(kubectl get pods $namespace --no-headers --field-selector=status.phase=Running --output custom-columns=:metadata.name $podargs | selecta)
 
 kubectl exec -it $pod $namespace -- $command
