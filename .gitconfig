@@ -65,11 +65,12 @@
   n = checkout -b
   new = checkout -b
   noff = merge --no-ff
-  nom = branch --no-merged
+  nom = branch -vv --no-merged
   p = push
   pff-only = pull --ff-only --all
   po = "!git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)"
   pp = pull --ff-only --all
+  rc = rebase --continue
   ri = rebase -i
   rim = rebase -i master
   ru = rebase -i @{upstream}
