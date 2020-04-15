@@ -5,6 +5,7 @@
 .DS_Store
 .agignore
 .bundle
+.codetarget
 .ctrlp
 .history
 .ignore
