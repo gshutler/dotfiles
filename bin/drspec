@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+git diff master --relative --name-only ./spec | grep "_spec\.rb" | xargs bundle exec rspec
