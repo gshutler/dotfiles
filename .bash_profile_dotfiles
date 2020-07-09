@@ -9,7 +9,12 @@ alias sgem="source ~/bin/sgem"
 alias profile="source ~/bin/switch-profile"
 
 alias p="profile"
+alias pnp="profile nonprod"
 alias pde="profile prod-de"
 alias pus="profile prod-us"
+
+alias knp="profile nonprod && k9s"
+alias kde="profile prod-de && k9s"
+alias kus="profile prod-us && k9s"
 
 alias pscreen='screen -d -R -S $profile'
