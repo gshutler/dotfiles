@@ -8,7 +8,7 @@ else
   current=`find . -name '*.todo' | selecta`
 fi
 
-mvim -v "$current"
+nvim "$current"
 
 find . -name '*.todo' -print0 | xargs -0 git add
 
