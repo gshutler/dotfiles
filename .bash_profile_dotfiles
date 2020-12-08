@@ -12,11 +12,15 @@ alias p="profile"
 alias pau="profile prod-au"
 alias pde="profile prod-de"
 alias pnp="profile nonprod"
+alias psg="profile prod-sg"
+alias puk="profile prod-uk"
 alias pus="profile prod-us"
 
 alias kau="profile prod-au && k9s"
 alias kde="profile prod-de && k9s"
 alias knp="profile nonprod && k9s"
+alias ksg="profile prod-sg && k9s"
+alias kuk="profile prod-uk && k9s"
 alias kus="profile prod-us && k9s"
 
 alias pscreen='screen -d -R -S $profile'
