@@ -6,7 +6,9 @@ set -o errexit
 files=`find -s . -type d \( \
                   -path ./**/obj/* -o \
                   -path ./**/vendor/* -o \
+                  -path './.terraform*' -o \
                   -path ./.bundle -o \
+                  -path ./.cache -o \
                   -path ./.git -o \
                   -path ./.sass-cache -o \
                   -path ./.secrets -o \
