@@ -13,8 +13,8 @@ bind 1:alt     move screenSizeX*0.2;0             screenSizeX*0.6;screenSizeY*0.
 bind 2:alt     move screenSizeX*0.25;0            screenSizeX*0.5;screenSizeY*0.6
 bind 4:alt     move screenSizeX*0.15;0            screenSizeX*0.7;screenSizeY
 bind 5:alt     move windowTopLeftX;windowTopLeftY windowSizeX;screenSizeY
-bind 6:alt     move screenOriginX;screenOriginY   screenSizeX;screenSizeY*0.35
-bind 7:alt     move screenSizeX*0.15;0             screenSizeX*0.7;screenSizeY*0.62
+bind 6:alt     move screenOriginX;screenOriginY   screenSizeX;screenSizeY*0.5
+bind 7:alt     move screenSizeX*0.15;0.5          screenSizeX*0.7;screenSizeY*0.48
 bind 8:alt     move screenSizeX/2-windowSizeX/2;0 windowSizeX;windowSizeY
 bind 9:alt     move screenOriginX;screenOriginY   screenSizeX;screenSizeY
 
