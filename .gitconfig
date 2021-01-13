@@ -21,6 +21,9 @@
 [fetch]
   prune = true
 
+[init]
+  defaultBranch = main
+
 [log]
   follow = true
 
@@ -60,6 +63,8 @@
   l = log --graph --oneline --decorate
   ll = log --graph --all --oneline --decorate
   ma = checkout master
+  main = checkout main
+  master = checkout master
   mp = "!git checkout master && git pull --ff-only"
   mt = mergetool
   n = checkout -b
@@ -75,7 +80,7 @@
   rim = rebase -i master
   ru = rebase -i @{upstream}
   s = status --short
-  wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
+  wip = for-each-ref --sort='authordate:iso8601' --format='%(color:green)%(authordate:format:''%a %b %d %H:%M'')\t%(color:white)%(refname:short)' refs/heads
 
 [filter "media"]
   clean = git-media-clean %f
