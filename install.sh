@@ -9,7 +9,7 @@ dir=~/Code/gshutler/dotfiles
 # Old dotfiles backup directory
 olddir=~/dotfiles_old
 # List of files/folders to symlink in homedir
-files=".config .vimrc .vim .gitconfig .gitconfig-cronofy .gitignore_global bin .bash_profile_dotfiles .slate"
+files=".config .vimrc .vim .gitconfig .gitconfig-cronofy .gitignore_global bin .bash_profile_dotfiles .slate .tmux.conf"
 
 # Create dotfiles_old in homedir.
 if [ ! -e $olddir ]; then
