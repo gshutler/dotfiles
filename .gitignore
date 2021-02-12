@@ -5,3 +5,4 @@
 .config/configstore/
 .config/filezilla/
 .config/tmuxinator
+.config/iterm2
