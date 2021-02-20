@@ -7,6 +7,8 @@ LuciusBlack
 " Lucius Customizations
 highlight def link rubySymbol Identifier
 
+let g:go_def_mode = "gopls"
+
 " Load a local .vimrc if present (allows for project-specific settings)
 set exrc
 
