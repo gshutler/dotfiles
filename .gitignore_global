@@ -13,7 +13,6 @@
 .ruby-version
 .todo
 /exe
-/pkg
 /tags
 /tmp
 /vendor
