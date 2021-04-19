@@ -8,6 +8,8 @@ LuciusBlack
 highlight def link rubySymbol Identifier
 
 let g:go_def_mode = "gopls"
+let g:go_metalinter_autosave_enabled = ['all']
+let g:go_auto_type_info = 1
 
 " Load a local .vimrc if present (allows for project-specific settings)
 set exrc

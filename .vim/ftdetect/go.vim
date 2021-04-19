@@ -6,3 +6,5 @@ au BufRead,BufNewFile *.go set filetype=go
       \ softtabstop=4
       \ listchars=tab:\|\ ,trail:·,precedes:<,extends:>
       \ list
+
+autocmd BufWritePre *.go :GoBuild
