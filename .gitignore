@@ -4,6 +4,7 @@
 !bin
 .config/configstore/
 .config/filezilla/
+.config/gh
 .config/tmuxinator
 .config/iterm2
 .config/jgit
