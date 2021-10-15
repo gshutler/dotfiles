@@ -176,12 +176,12 @@ nmap <silent> <leader>rs :source $MYVIMRC<CR>
 nmap <leader>w :w<CR>
 nmap <leader>q :wq<CR>
 
-" Split creation
-nmap <leader>v :vsplit<CR>:CtrlP<CR>
-nmap <leader>s :split<CR>:CtrlP<CR>
+" Fuzzy finding aliases
+nmap <leader>p :Files<CR>
 
-" CtrlP aliases
-nmap <leader>p :CtrlP<CR>
+" Split creation
+nmap <leader>v :vsplit<CR>:Files<CR>
+nmap <leader>s :split<CR>:Files<CR>
 
 " Map ; to : for less shift-key action
 nnoremap ; :
