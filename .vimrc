@@ -20,6 +20,10 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_generate_tags = 1
 
+let g:fzf_command_prefix = 'Fzf'
+let g:fzf_preview_window = ['hidden']
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
+
 " Load a local .vimrc if present (allows for project-specific settings)
 set exrc
 
@@ -177,11 +181,11 @@ nmap <leader>w :w<CR>
 nmap <leader>q :wq<CR>
 
 " Fuzzy finding aliases
-nmap <leader>p :Files<CR>
+nmap <leader>p :FzfFiles<CR>
 
 " Split creation
-nmap <leader>v :vsplit<CR>:Files<CR>
-nmap <leader>s :split<CR>:Files<CR>
+nmap <leader>v :vsplit<CR>:FzfFiles<CR>
+nmap <leader>s :split<CR>:FzfFiles<CR>
 
 " Map ; to : for less shift-key action
 nnoremap ; :
