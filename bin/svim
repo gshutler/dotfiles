@@ -28,10 +28,12 @@ files=`find -s . -type d \( \
               -prune -o \
               -type f -print | sed -e "s/^\.\///"`
 
+fzf_opts="--info=hidden --layout=reverse --height=20"
+
 if [ -z "$1" ]; then
-  file=`echo -e "$files" | selecta`
+  file=`echo -e "$files" | fzf $fzf_opts`
 else
-  file=`echo -e "$files" | selecta --search "$1"`
+  file=`echo -e "$files" | fzf $fzf_opts --query "$1"`
 fi
 
 nvim $file

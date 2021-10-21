@@ -24,6 +24,8 @@ let g:fzf_command_prefix = 'Fzf'
 let g:fzf_preview_window = ['hidden']
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.6, 'relative': v:true, 'yoffset': 1.0 } }
 
+let g:ctrlp_user_command = 'ag %s --ignore-case --nocolor --nogroup --hidden -g ""'
+
 " Load a local .vimrc if present (allows for project-specific settings)
 set exrc
 
