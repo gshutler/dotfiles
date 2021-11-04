@@ -1,0 +1,17 @@
+brew "asdf"
+brew "bash"
+brew "fzf"
+brew "git"
+brew "gpg2"
+brew "nvim"
+brew "pinentry-mac"
+brew "the_silver_searcher"
+
+tap "homebrew/cask"
+
+cask "1password"
+cask "alfred"
+cask "firefox"
+cask "gpg-suite"
+cask "iterm2"
+cask "slate"

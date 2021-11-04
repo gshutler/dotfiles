@@ -93,5 +93,3 @@
 
 [includeIf "gitdir:~/Code/cronofy/"]
   path = .gitconfig-cronofy
-[gpg]
-	program = gpg2
