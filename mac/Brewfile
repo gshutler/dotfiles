@@ -18,6 +18,7 @@ cask "alfred"
 cask "firefox"
 cask "gpg-suite"
 cask "iterm2"
+cask "pgadmin4"
 cask "slate"
 
 mas "Bear", id: 1091189122
