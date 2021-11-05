@@ -20,7 +20,9 @@ cask "gpg-suite"
 cask "iterm2"
 cask "pgadmin4"
 cask "slate"
+cask "visual-studio-code"
 
 mas "Bear", id: 1091189122
+mas "Pixelmator Pro", id: 1289583905
 mas "The Clock", id: 488764545
 mas "Webcam Settings", id: 533696630
