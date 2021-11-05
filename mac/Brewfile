@@ -3,6 +3,7 @@ brew "bash"
 brew "fzf"
 brew "git"
 brew "gpg2"
+brew "mas"
 brew "nvim"
 brew "pinentry-mac"
 brew "rpl"
@@ -18,3 +19,7 @@ cask "firefox"
 cask "gpg-suite"
 cask "iterm2"
 cask "slate"
+
+mas "Bear", id: 1091189122
+mas "The Clock", id: 488764545
+mas "Webcam Settings", id: 533696630
