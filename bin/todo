@@ -5,7 +5,7 @@ if [ -a ".todo/current" ]; then
   cd ~/todo
 else
   cd ~/todo
-  current=`find . -name '*.todo' | selecta`
+  current=`find . -name '*.todo' | fzf`
 fi
 
 nvim "$current"

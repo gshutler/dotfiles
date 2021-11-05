@@ -21,7 +21,7 @@ files=`find -s . -type d \( \
               -type f -print | sed -e "s/^\.\///"`
 
 if [ -z "$1" ]; then
-  open $(echo -e "$files" | selecta)
+  open $(echo -e "$files" | fzf)
 else
-  open $(echo -e "$files" | selecta --search "$1")
+  open $(echo -e "$files" | fzf --search "$1")
 fi

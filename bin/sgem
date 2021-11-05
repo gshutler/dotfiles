@@ -3,7 +3,7 @@
 # Fail fast
 set -o errexit
 
-gem_name=`bundle list | cut -d " " -f 4 | selecta`
+gem_name=`bundle list | cut -d " " -f 4 | fzf`
 dir=`bundle show $gem_name`
 cd $dir
 

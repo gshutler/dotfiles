@@ -4,7 +4,7 @@
 set -o errexit
 
 if [ -z "$1" ]; then
-  git checkout $(git branch --no-merged | selecta)
+  git checkout $(git branch --no-merged | fzf)
 else
-  git checkout $(git branch --no-merged | selecta --search "$1")
+  git checkout $(git branch --no-merged | fzf --search "$1")
 fi

@@ -3,6 +3,6 @@
 # Fail fast
 set -o errexit
 
-project=`tmuxinator list --newline | grep -v "tmuxinator projects" | selecta`
+project=`tmuxinator list --newline | grep -v "tmuxinator projects" | fzf`
 
 tmuxinator start $project

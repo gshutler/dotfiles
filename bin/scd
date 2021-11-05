@@ -20,7 +20,7 @@ files=`find -s . -type d \( \
               -type d -print | sed -e "s/^\.\///"`
 
 if [ -z "$1" ]; then
-  cd $(echo -e "$files" | selecta)
+  cd $(echo -e "$files" | fzf)
 else
-  cd $(echo -e "$files" | selecta --search "$1")
+  cd $(echo -e "$files" | fzf --search "$1")
 fi
