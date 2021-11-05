@@ -5,7 +5,10 @@ brew "git"
 brew "gpg2"
 brew "nvim"
 brew "pinentry-mac"
+brew "rpl"
 brew "the_silver_searcher"
+brew "tmux"
+brew "tmuxinator"
 
 tap "homebrew/cask"
 
