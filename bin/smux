@@ -3,6 +3,8 @@
 # Fail fast
 set -o errexit
 
-project=`tmuxinator list --newline | grep -v "tmuxinator projects" | fzf`
+fzf_opts="--info=hidden --layout=reverse --height=20"
+
+project=`tmuxinator list --newline | grep -v "tmuxinator projects" | fzf $fzf_opts`
 
 tmuxinator start $project
