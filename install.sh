@@ -49,3 +49,7 @@ else
   echo "Appending \"$sourcecmd\" to ~/.bash_profile"
   echo -e "\n$sourcecmd" >> ~/.bash_profile
 fi
+
+echo ""
+echo "Updating submodules"
+git submodule update --init
