@@ -31,9 +31,9 @@ files=`find -s . -type d \( \
 fzf_opts="--info=hidden --layout=reverse --height=20"
 
 if [ -z "$1" ]; then
-  file=`echo -e "$files" | fzf $fzf_opts`
+  file=`echo -e "$files" | fzf -i $fzf_opts`
 else
-  file=`echo -e "$files" | fzf $fzf_opts --query "$1"`
+  file=`echo -e "$files" | fzf -i $fzf_opts --query "$1"`
 fi
 
 nvim $file
