@@ -2,6 +2,7 @@
 
 # File for non-machine specific additions to .bash_profile
 
+alias awsmfa="source ~/bin/aws-mfa"
 alias code="source ~/bin/code"
 alias root="source ~/bin/root"
 alias scd="source ~/bin/scd"
