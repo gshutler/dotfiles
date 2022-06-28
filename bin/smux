@@ -3,6 +3,11 @@
 # Fail fast
 set -o errexit
 
+if [ -n "$TMUX" ] ; then
+  echo "In TMUX"
+  exit 1
+fi
+
 fzf_opts="--info=hidden --layout=reverse --height=20"
 
 project=`tmuxinator list --newline | grep -v "tmuxinator projects" | fzf $fzf_opts`
