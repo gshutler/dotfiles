@@ -4,3 +4,7 @@
 	signingkey = ~/.ssh/id_ed25519_gitsigning
 [gpg "ssh"]
 	allowedsignersfile = ~/.ssh/allowed_signers
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
