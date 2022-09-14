@@ -47,7 +47,8 @@ echo
 cat ~/.ssh/allowed_signers
 
 echo
-echo "Signing public key (to provide to GitHub)"
+echo "Signing public key"
+echo "Provide to GitHub via https://github.com/settings/ssh/new"
 echo
 echo "${signing_file_public_key}"
 echo
