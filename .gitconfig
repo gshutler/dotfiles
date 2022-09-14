@@ -93,3 +93,6 @@
 
 [includeIf "gitdir:~/Code/cronofy/"]
   path = .gitconfig-cronofy
+
+[branch]
+  autosetuprebase = always
