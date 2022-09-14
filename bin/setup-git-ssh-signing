@@ -1,0 +1,53 @@
+#! /usr/bin/env bash
+
+set -o errexit
+
+echo "Beginning git signing setup"
+echo
+
+echo "Checking gitsigning key is set up"
+echo
+ssh-keygen -t ed25519 -N "" -f ~/.ssh/id_ed25519_gitsigning || true
+echo
+
+gpg_format=$(git config gpg.format || echo '')
+if [ "${gpg_format}" != 'ssh' ] ; then
+  echo "Setting global gpg.format to ssh"
+  git config --global gpg.format ssh
+else
+  echo "Global gpg.format already ssh"
+fi
+
+echo
+echo "Setting global user.signingkey to ~/.ssh/id_ed25519_gitsigning"
+git config --global user.signingkey '~/.ssh/id_ed25519_gitsigning'
+echo
+
+commit_gpgsign=$(git config commit.gpgsign || echo '')
+if [ "${commit_gpgsign}" != 'true' ] ; then
+  echo "Setting global commit.gpgsign to true (signs commits by default)"
+  git config --global commit.gpgsign true
+else
+  echo "Global commit.gpgsign already true"
+fi
+
+echo
+echo "Setting global gpg.ssh.allowedsignersfile"
+git config --global gpg.ssh.allowedsignersfile '~/.ssh/allowed_signers'
+signing_file_public_key=$(cat ~/.ssh/id_ed25519_gitsigning.pub)
+echo "$(git config user.email) ${signing_file_public_key}" >> ~/.ssh/allowed_signers
+
+# Make allowed_signers unique
+cat ~/.ssh/allowed_signers | sort -u > ~/.ssh/allowed_signers.tmp
+mv -f ~/.ssh/allowed_signers.tmp ~/.ssh/allowed_signers
+
+echo
+echo "Allowed signers"
+echo
+cat ~/.ssh/allowed_signers
+
+echo
+echo "Signing public key (to provide to GitHub)"
+echo
+echo "${signing_file_public_key}"
+echo
