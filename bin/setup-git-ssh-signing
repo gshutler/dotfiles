@@ -2,8 +2,23 @@
 
 set -o errexit
 
-echo "Beginning git signing setup"
+git_version=$(git version | cut -d" " -f3)
 echo
+echo "Beginning git signing setup (git ${git_version})"
+echo
+
+git_major=$(echo "$git_version" | cut -d'.' -f1)
+git_minor=$(echo "$git_version" | cut -d'.' -f2)
+
+if [ "${git_major}" -lt "3" ] && [ "${git_minor}" -lt "34" ] ; then
+  echo "Git version higher than 2.34 required for signing with SSH keys"
+  echo
+  echo "First install a more recent version of git, eg:"
+  echo
+  echo "    brew install git"
+  echo
+  exit 1
+fi
 
 echo "Checking gitsigning key is set up"
 echo
