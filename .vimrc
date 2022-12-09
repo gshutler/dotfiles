@@ -1,6 +1,8 @@
 syn on
 
 set t_Co=256
+set mouse=
+
 colorscheme lucius
 LuciusBlack
 
