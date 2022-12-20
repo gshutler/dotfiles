@@ -8,3 +8,5 @@
 	gpgsign = true
 [gpg]
 	format = ssh
+[branch]
+	autosetuprebase = always
