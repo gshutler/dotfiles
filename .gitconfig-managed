@@ -80,6 +80,7 @@
   rc = rebase --continue
   ri = rebase -i
   rim = rebase -i master
+  rom = pull origin master --rebase --interactive
   ru = rebase -i @{upstream}
   s = status --short
   wip = for-each-ref --sort='authordate:iso8601' --format='%(color:green)%(authordate:format:''%a %b %d %H:%M'')\t%(color:white)%(refname:short)' refs/heads
