@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
 if [ -z "$1" ]; then
   echo
@@ -16,11 +16,24 @@ if [ -z "$profile" ]; then
   return
 fi
 
-echo "Setting PROFILE to $profile"
-export PROFILE=$profile
-echo
-echo "[aws] Switching to profile \"$profile\""
-export AWS_PROFILE=$profile
-export AWS_SDK_LOAD_CONFIG=1
-echo "[kubectl] Switching to profile \"$profile\""
-export KUBECONFIG="$HOME/.kube/configs/$profile"
+if [ "$profile" = "local" ]; then
+  echo "Setting PROFILE to $profile"
+  export PROFILE=$profile
+  echo
+  echo "[aws] Clearing AWS profile"
+  unset AWS_SDK_LOAD_CONFIG
+  unset AWS_PROFILE
+  echo "[kubectl] Switching to profile \"$profile\""
+  export KUBECONFIG="$HOME/.kube/configs/$profile"
+elif [ $(grep -c "\[profile $profile\]" $HOME/.aws/config) = 1 ]; then
+  echo "Setting PROFILE to $profile"
+  export PROFILE=$profile
+  export AWS_SDK_LOAD_CONFIG=1
+  echo
+  echo "[aws] Switching to profile \"$profile\""
+  export AWS_PROFILE=$profile
+  echo "[kubectl] Switching to profile \"$profile\""
+  export KUBECONFIG="$HOME/.kube/configs/$profile"
+else
+  echo "Profile $profile doesn't exist"
+fi
