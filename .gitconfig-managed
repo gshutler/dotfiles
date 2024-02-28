@@ -12,7 +12,7 @@
   ui = auto
 
 [core]
-  editor = nvim
+  editor = nvim +startinsert
   excludesfile = /Users/gshutler/.gitignore_global
 
 [diff]
