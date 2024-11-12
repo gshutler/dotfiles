@@ -112,14 +112,14 @@ set iskeyword+=\!
 set iskeyword+=\?
 
 " 256 color reference http://www.mudpedia.org/mediawiki/index.php/Xterm_256_colors
-highlight ColorColumn  ctermbg=232
-highlight CursorLine   ctermbg=235
-highlight CursorColumn ctermbg=235
-highlight Pmenu        ctermfg=Black    ctermbg=DarkGray
-highlight PmenuSel     ctermfg=Black    ctermbg=White
-highlight StatusLine   ctermfg=Black    ctermbg=White    cterm=none gui=none
-highlight StatusLineNC ctermfg=Black    ctermbg=DarkGray cterm=none gui=none
-highlight MatchParen   ctermfg=DarkGray ctermbg=Black    cterm=none
+highlight ColorColumn  ctermbg=232      guibg=#080808
+highlight CursorLine   ctermbg=235      guibg=#262626
+highlight CursorColumn ctermbg=235      guibg=#262626
+highlight Pmenu        ctermfg=Black    ctermbg=DarkGray  guifg=#000000 guibg=#888888
+highlight PmenuSel     ctermfg=Black    ctermbg=White     guifg=#000000 guibg=#ffffff
+highlight StatusLine   ctermfg=Black    ctermbg=White     guifg=#000000 guibg=#ffffff   cterm=none gui=none
+highlight StatusLineNC ctermfg=Black    ctermbg=DarkGray  guifg=#000000 guibg=#888888   cterm=none gui=none
+highlight MatchParen   ctermfg=DarkGray ctermbg=Black     guifg=#888888 guibg=#000000   cterm=none
 highlight clear SpellBad
 highlight SpellBad ctermfg=009
 
