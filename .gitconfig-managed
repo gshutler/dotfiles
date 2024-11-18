@@ -41,6 +41,9 @@
 [push]
   default = upstream
 
+[rebase]
+  updateRefs = true
+
 [rerere]
   enabled = true
 
@@ -50,24 +53,25 @@
   amend = commit --amend
   cached = diff --cached
   c = commit --verbose
-  clean-merged = "!git checkout master && git fetch --prune && (git branch --merged | grep -v '*' | grep -v master | xargs -n 1 git branch -d) && (git branch --remotes --merged | grep -v '*' | grep -v master | sed 's/origin\\///' | xargs -n 1 git push --delete origin) && git checkout -"
+  clean-merged = "!(git checkout $(git main-branch)) && git fetch --prune && (git branch --merged | grep -v '*' | grep -v 'main|master' | xargs -n 1 git branch -d) && (git branch --remotes --merged | grep -v '*' | grep -v 'main|master' | sed 's/origin\\///' | xargs -n 1 git push --delete origin) && git checkout -"
   cm = commit --verbose
   co = checkout
   d = diff
-  dm = diff master...
+  dm = "!(git diff $(git main-branch)...)"
+  dms = "!(git diff --stat $(git main-branch)...)"
   du = diff @{upstream} @
   dw = diff -w
   f = fetch --all
   fall = fetch --all
   ff = merge --ff-only
-  ffm = merge --ff-only master
+  ffm = "!(git merge --ff-only $(git main-branch))"
   ffo = merge --ff-only
   l = log --graph --oneline --decorate
   ll = log --graph --all --oneline --decorate
-  ma = checkout master
+  ma = "!(git checkout $(git main-branch))"
   main = checkout main
   master = checkout master
-  mp = "!git checkout master && git pull --ff-only"
+  mp = "!(git checkout $(git main-branch)) && git pull --ff-only"
   mt = mergetool
   n = checkout -b
   new = checkout -b
@@ -79,8 +83,8 @@
   pp = pull --ff-only --all
   rc = rebase --continue
   ri = rebase -i
-  rim = rebase -i master
-  rom = pull origin master --rebase --interactive
+  rim = "!(git rebase -i $(git main-branch))"
+  rom = "!(git pull origin $(git main-branch) --rebase --interactive)"
   ru = rebase -i @{upstream}
   s = status --short
   wip = for-each-ref --sort='authordate:iso8601' --format='%(color:green)%(authordate:format:''%a %b %d %H:%M'')\t%(color:white)%(refname:short)' refs/heads
@@ -95,4 +99,10 @@
   smudge = git-lfs smudge %f
 
 [includeIf "gitdir:~/Code/cronofy/"]
+  path = .gitconfig-cronofy
+
+[includeIf "gitdir:/Users/gshutler/Code/cronofy/"]
+  path = .gitconfig-cronofy
+
+[includeIf "gitdir:/System/Volumes/Data/code/cronofy/"]
   path = .gitconfig-cronofy
