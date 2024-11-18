@@ -20,3 +20,4 @@
 /.dockerenv
 /.minikubeenv
 npm-debug.log
+.obsidian
