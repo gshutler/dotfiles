@@ -1,7 +1,11 @@
+# Allow bin scripts to be stored
+!bin
+# Exceptions (usually managed elsewhere)
+bin/switch-profile
+
 .DS_Store
 .vim/.netrwhist
 .vim/undodir
-!bin
 .config/configstore/
 .config/csharp.history
 .config/filezilla/
