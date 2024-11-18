@@ -3,10 +3,11 @@
 .vim/undodir
 !bin
 .config/configstore/
+.config/csharp.history
 .config/filezilla/
 .config/gh
-.config/tmuxinator
 .config/iterm2
 .config/jgit
-.config/csharp.history
+.config/sanity
+.config/tmuxinator
 .gitconfig
