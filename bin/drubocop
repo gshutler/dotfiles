@@ -1,0 +1,3 @@
+#! /usr/bin/env bash
+
+git diff master --diff-filter=d --relative --name-only . | grep "\.rb" | xargs bundle exec rubocop $@
