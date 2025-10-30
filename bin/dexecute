@@ -1,0 +1,38 @@
+#! /usr/bin/env bash
+
+path="."
+diffbranch="master"
+
+while test $# -gt 0 ; do
+  case "$1" in
+    "--diffbranch")
+      shift
+      diffbranch="$1"
+      ;;
+    "--suffix")
+      shift
+      suffix="$1"
+      ;;
+    "--path")
+      shift
+      path="$1"
+      ;;
+    "--")
+      shift
+      break
+      ;;
+    *)
+      echo "Unrecognized option $1"
+      exit 1
+      ;;
+  esac
+  shift
+done
+
+files=`git diff $diffbranch --diff-filter=d --relative --name-only $path | grep "$suffix"`
+
+if [ -z "$files" ] ; then
+  echo "No changes detected"
+else
+  echo $files | xargs $@
+fi
