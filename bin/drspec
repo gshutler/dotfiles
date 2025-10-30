@@ -1,3 +1,9 @@
 #! /usr/bin/env bash
 
-git diff master --diff-filter=d --relative --name-only ./spec | grep "_spec\.rb" | xargs bundle exec rspec $@
+files=`git diff master --diff-filter=d --relative --name-only ./spec | grep "_spec\.rb"`
+
+if [ -z "$files" ] ; then
+  echo "No changes detected"
+else
+  echo $files | xargs bundle exec rspec $@
+fi
