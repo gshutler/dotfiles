@@ -1,0 +1,23 @@
+#! /usr/bin/env bash
+
+set -o errexit
+
+if [ -f Gemfile ] ; then
+  echo
+  echo "💎 Ruby detected"
+  echo
+
+  if [ -d spec ] ; then
+    echo "🧪 Running drspec"
+    echo
+    drspec
+    echo
+  fi
+
+  if [ -f .rubocop.yml ] ; then
+    echo "👮 Running drubocop"
+    echo
+    drubocop
+    echo
+  fi
+fi
