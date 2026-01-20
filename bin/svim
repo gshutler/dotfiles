@@ -21,6 +21,7 @@ files=`find -s . -type d \( \
                   -path ./log -o \
                   -path ./node_modules -o \
                   -path ./packages -o \
+                  -path ./public -o \
                   -path ./tmp -o \
                   -path ./tools -o \
                   -path ./vendor \
