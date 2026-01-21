@@ -2,6 +2,15 @@
 
 path="."
 diffbranch="master"
+suffixes=()
+debugecho="${DEXECUTE_DEBUG}"
+
+debug() {
+  if [ -n "${debugecho}" ] ; then
+    echo -e "\e[90m${@}\e[0m"
+    echo
+  fi
+}
 
 while test $# -gt 0 ; do
   case "$1" in
@@ -11,11 +20,16 @@ while test $# -gt 0 ; do
       ;;
     "--suffix")
       shift
+      suffixes+=("--regexp")
+      suffixes+=("\\$1")
       suffix="$1"
       ;;
     "--path")
       shift
       path="$1"
+      ;;
+    "--debug")
+      debugecho="1"
       ;;
     "--")
       shift
@@ -29,10 +43,14 @@ while test $# -gt 0 ; do
   shift
 done
 
-files=`git diff $diffbranch --diff-filter=d --relative --name-only $path | grep "$suffix"`
+debug "Filter: grep ${suffixes[@]}"
+
+files=`git diff $diffbranch --diff-filter=d --relative --name-only $path | grep ${suffixes[@]}`
 
 if [ -z "$files" ] ; then
   echo "No changes detected"
 else
+  debug "${files}"
+  debug "$@ {files}"
   echo $files | xargs $@
 fi
