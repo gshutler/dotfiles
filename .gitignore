@@ -4,14 +4,7 @@
 bin/switch-profile
 
 .DS_Store
+.config/
 .vim/.netrwhist
 .vim/undodir
-.config/configstore/
-.config/csharp.history
-.config/filezilla/
-.config/gh
-.config/iterm2
-.config/jgit
-.config/sanity
-.config/tmuxinator
 .gitconfig
