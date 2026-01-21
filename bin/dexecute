@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+set -o errexit
+
 path="."
 diffbranch="master"
 suffixes=()
@@ -22,7 +24,6 @@ while test $# -gt 0 ; do
       shift
       suffixes+=("--regexp")
       suffixes+=("\\$1")
-      suffix="$1"
       ;;
     "--path")
       shift
@@ -45,7 +46,7 @@ done
 
 debug "Filter: grep ${suffixes[@]}"
 
-files=`git diff $diffbranch --diff-filter=d --relative --name-only $path | grep ${suffixes[@]}`
+files=`git diff $diffbranch --diff-filter=d --relative --name-only $path | grep ${suffixes[@]} || [[ $? == 1 ]]`
 
 if [ -z "$files" ] ; then
   echo "No changes detected"
